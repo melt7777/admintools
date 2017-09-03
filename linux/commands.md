@@ -102,3 +102,46 @@ mount /dev/mapper/vg00-home home/
 chroot /mnt
 ```
 
+#############################################################
+# Unpack zip/rar files in deep dir structure
+#############################################################
+Have you ever had zip or rar files buried deep into a directory structure that you need to unpack? Instead of swearing and shaking your fist at the problem, try out this simple solution.
+
+### Using Linux:
+
+to unrar all .rar in current linux directory:
+
+One or both of these should work:
+```
+find . -name "*.rar" -exec unrar x -o+ {} \;
+```
+OR 
+```
+find . -type d -exec sh -c '(cd {} && unrar e -r -o- *.rar)' ';'
+```
+Ok, now we have unpacked the zip and/or rar files, but they are all unpacked deep into the directory structure. How to gather, for example, all the mkv video files all into the current directory? 
+
+```
+find . -name '*.mkv' -exec mv {} . \;
+```
+
+#############################################################
+# bash script to create playlist files in music subdirectories
+#############################################################
+```
+#!/bin/bash
+#
+
+
+find . -type d |
+while read subdir
+do
+ rm -f *.m3u
+
+  for filename in "$subdir"/*.mp3
+  do
+        echo "${filename##*/}" >> ./"$subdir"/"${subdir##*/}.m3u"
+  done
+
+done
+```
