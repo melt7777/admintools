@@ -1,0 +1,25 @@
+# How to upload an entire Windows OS to an FTP site as a backup using a Ubuntu Rescue Remix boot disk
+
+1. Boot Ubuntu Rescue Remix disc. If not booting, check BIOS for Boot Priority or use F12 Boot Menu.
+2. At the boot: screen type live and hit enter to boot from the CD
+3. At command prompt, type these commands:
+   sudo mkdir mount
+   sudo ntfs-3g /dev/sda1 (or /dev/sda2 if it doesnt work) mount
+   cd mount
+4. Go in and delete some temp files and pagefile.sys 
+5. More command line :
+   apt-get install lftp
+   lftp
+6. at the lftp prompt,
+   open -u [user,pass] -p [port] [ftpsite]
+   mkdir Backup1
+   cd Backup1
+   mirror -R -v . .
+7. sit back and watch the whole hard disk ftp to your server.
+
+
+
+
+
+
+
