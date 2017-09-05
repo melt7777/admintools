@@ -1,6 +1,4 @@
-----------------------------------------------------------------------------
 # 1&1 SERVER FAQ
-----------------------------------------------------------------------------
 
 ## 1&1 Dedicated Root Servers: Troubleshooting Tools:
 
@@ -143,9 +141,7 @@ RewriteRule ^(.*)$ https://domainnamehere.com/$1 [R,L]
 ### END SSL --------------------------------------
 ```
 
-----------------------------------------------------------------------------
 # 1&1 GENERAL FAQ
-----------------------------------------------------------------------------
 
 ## 1&1 SSL: How to use with External Domain and External Name Servers:
 
@@ -192,9 +188,7 @@ Call us or go to cancel.1and1.com.
 http://help.1and1.com/search/click/controller/search/url/account-and-billing-c65577%252Faccount-details-c65578%252Fcancel-an-entire-package-a630738.html/rank/1/q/cancel%2Bpackage
 
 
-----------------------------------------------------------------------------
 # 1&1 WINDOWS SERVERS FAQ
-----------------------------------------------------------------------------
 
 ## 1&1 Dedicated Server: How to configure your Software RAID 1 Mirror in Windows Server 2012:
 
@@ -285,9 +279,7 @@ To enable .NET 3.5 SP1 on  Windows Server 2012 operating system:
     If the .NET 3.5 features were installed successfully, you should see a message confirming the installation was successful.
     Close out of Control Panel.
 
-----------------------------------------------------------------------------
 # 1&1 LINUX SERVERS FAQ
-----------------------------------------------------------------------------
 
 ## 1&1 Dedicated Server: How to configure your Software RAID 1 Mirror in Linux:
 
@@ -323,9 +315,7 @@ http://help.1and1.com/servers-c37684/dynamic-cloud-server-linux-c73266/increase-
 https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/explanation-of-ssh-secure-shell-access-a595889.html
 https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/establish-an-ssh-connection-from-a-pc-a595890.html
 
-----------------------------------------------------------------------------
 # PLESK FAQ 
-----------------------------------------------------------------------------
 
 ## 1&1 Plesk / SSL: How to issue, download, and install a root SSL in Plesk:
 
@@ -359,9 +349,7 @@ The username and passwords do not work. However, I was able to obtain the key fr
 https://docs.plesk.com/en-US/12.5/deployment-guide/installing-plesk/after-installing-plesk/install-a-license-key.70287/
 https://kb.plesk.com/en/121484
 
-----------------------------------------------------------------------------
 # SUPPORT WRAPPERS AND MACROS
-----------------------------------------------------------------------------
 
 SERCON with NO PASSWORD REQUIRED
 ```bash
@@ -421,6 +409,7 @@ Host *
 ```
 
 ----------------------------------------------------------------------------
+
 ## Hard Disk Testing and Recovery
 
 View Software Raid on Linux Dedicated Servers:
