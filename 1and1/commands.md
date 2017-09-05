@@ -1,4 +1,6 @@
-# GENERAL
+----------------------------------------------------------------------------
+# 1&1 SERVER FAQ
+----------------------------------------------------------------------------
 
 ## 1&1 Dedicated Root Servers: Troubleshooting Tools:
 
@@ -21,18 +23,18 @@ http://help.1and1.com/servers-c37684/dedicated-server-linux-c37687/rescue-and-re
 
 Here are the backup options for your server along with brief explanation:
 
-FTP BACKUP: This is where we provide you with a FTP file storage in our datacenter (outside of your server itself) and you can program any FTP-compatible backup software to periodically sync files from the server to the FTP storage server.  Prices are monthly but billed in 3-month (quarterly) intervals by amount of storage:
-
-  *FTP 250GB	--	$19.99/mo
-  *FTP 500GB	--	$29.99/mo
-  *FTP 1000GB	--	$39.99/mo
-
-PROFESSIONAL BACKUP: Backup storage is provided similar to FTP but it's managed in the Control Panel and you install the Client software inside your server and it's handled by the software.
-
-  *Professional Backup L (10 GB)	--	$9.99/mo
-  *Professional Backup XL (50 GB)	--	$29.99/mo
-  *Professional Backup XXL (100 GB)	--	$49.00/mo
-
+FTP BACKUP: This is where we provide you with a FTP file storage in our datacenter (outside of your server itself) and you can program any FTP-compatible backup software to periodically sync files from the server to the FTP storage server.  Prices are monthly but billed in 3-month (quarterly) intervals by amount of storage:  
+  
+  FTP 250GB	--	$19.99/mo  
+  FTP 500GB	--	$29.99/mo  
+  FTP 1000GB	--	$39.99/mo  
+  
+PROFESSIONAL BACKUP: Backup storage is provided similar to FTP but it's managed in the Control Panel and you install the Client software inside your server and it's handled by the software.  
+  
+  Professional Backup L (10 GB)	--	$9.99/mo  
+  Professional Backup XL (50 GB)	--	$29.99/mo  
+  Professional Backup XXL (100 GB)	--	$49.00/mo  
+  
 ## 1&1 Dedicated Root Servers IPv4 Addresses:
 
 An additional IPv4 will be $0.99/month billed quarterly. You can add up to 7 to your dedicated server for a total supported of 8 IPv4. Please reply with Phone PIN for verification and we will order 1 additional IPv4 for your server. It takes about 15 minutes for it to be ready to use. Don't forget to add it to your firewall.
@@ -73,9 +75,6 @@ can still perform all the actions you would directly on the server in
 both packages but will not have access to the options mentioned above.
 Performance and resource wise they are the same server.
 
-## 1&1 SSL: How to use with External Domain and External Name Servers:
-
-In order to use our certificates the domain must exist in the 1&1 Domain Center. If you want to use external nameservers, you have to go into Domain Center and set those nameservers to match what is shown on WHOIS. Then, you will have to create an email account at your mail host to do email-based domain validation. Create hostmaster@yourdomain.com email account so you can verify. Then you can setup the cert in 1&1 Manage SSL section. And use the email to confirm the certificate. And then it will let you download the key, cert and intermediate/ca cert files. 
 
 ## 1&1 VPS: How to manage a 1&1 Virtuozzo/Parallels VPS using Parallels Power Panel:
 
@@ -89,53 +88,14 @@ http://help.1and1.com/servers-c37684/virtual-private-server-c63343/virtuozzo-pow
 
 ## VNC: For accessing rescue mode, we recommend UltraVNC Viewer Portable: 
 http://www.uvnc.com/component/jdownloads/summary/5/97.html                                                                    
+
 ## How to mitigate 504 errors on the Managed Cloud Servers:
 
 A feature of the Managed Cloud Panel that we are finding to be helpful with 504 issues: You can change the resources of your server between the web server and the database server. In the Cloud Panel click Servers then click your server in the main Panel. Then look below and you will see the change Resources button. Choose custom and change your allocation as you see fit. Note: This may restart the services on the server which takes a moment. 
 
 Beyond this, it is not possible to change the Managed Server configuration, because they use a highly scaled customized system that has been designed by 1&1 for security and reliability. In this case you would want to hire an admin to manage your own server using root / Administrator access. 
 
-
-## 1&1 How and why TXT/SPF is becoming more and more required for e-mail:
-
-Many mail servers like Microsoft, Google, and AOL are starting to require DNS verification such as SPF and DKIM records in order to accept emails. This is done in an effort to fight SPAM. It places more responsibility on mail server admins to be compliant. 
-
-Here is some more information that will help you increase the reputation of your mail server so your emails will be delivered:
-
-TXT/SPF Records: Why are they needed?
-http://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/explanation-of-an-spf-record-a792807.html
-
-TXT/SPF Records: How to set up.
-http://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/add-or-remove-txt-records-a792509.html
-
-For more information how SPF records are built, see this 3rd party tool: http://spfwizard.net
-
-# 1&1 Mail: How to migrate domains and emails from one contract to another:
-
-1. Move the domains from old package to new package (Mail will go down):
-If you do not have as a target a hosting or server package, order a new contract / hosting package for email to go to.
-http://help.1and1.com/domains-c36931/transfer-domains-c79823/within-1and1-c38670/transfer-a-domain-between-1and1-packages-within-the-same-account-a792490.html
-
-2. Create the email accounts again in the new package (they will be empty)
-http://help.1and1.com/e-mail-and-office-c37589/1and1-mail-basic-c37590/getting-started-c85087/create-an-e-mail-account-in-your-1and1-package-a616894.html
-
-3. Migrate the mails from old to new mailboxes:
-https://help.1and1.com/e-mail-and-office-c37589/1and1-mail-business-c85093/using-the-product-c85138/migrate-e-mail-from-another-account-to-a-1and1-e-mail-account-a792498.html
-
-4. Create the subdomains again (they will be deleted during the transfer)
-http://help.1and1.com/search/click/controller/search/url/domains-c36931%252Fmanage-domains-c79822%252Fsubdomains-c37588%252Fcreate-a-subdomain-a594923.html/rank/1/q/create%2Bsubdomain
-
-5. Create the DNS again (it will be reset to defaults during the transfer) (set A record to new server IP address to host sites in that server)
-http://help.1and1.com/search/click/controller/search/url/domains-c36931%252Fmanage-domains-c79822%252Fdns-c37586%252Fchange-your-domain-s-ip-address-a-record-a599296.html/rank/1/q/edit%2Bdns
-
-6. Make sure everything functions in new package.
-Send and receive email, view the websites.
-
-7. Cancel the old package.
-Call us or go to cancel.1and1.com.
-http://help.1and1.com/search/click/controller/search/url/account-and-billing-c65577%252Faccount-details-c65578%252Fcancel-an-entire-package-a630738.html/rank/1/q/cancel%2Bpackage
-
-# 1&1 Dedicated Root Server: Steps involved in a Hard Disk Swap:
+## 1&1 Dedicated Root Server: Steps involved in a Hard Disk Swap:
 
 In a datacenter, Hard disks are "consumables" and are changed out like tires on a car when they wear out. Your dedicated server is designed to have two "twins" or mirror drives. When one goes down, we:
 - Have you backup your data just as a precaution: it is the only thing we cannot replace.
@@ -162,7 +122,7 @@ You can login to your server using SSH and see that the CPU resources are being 
 - Optimize your PHP code so that the resources used per visitor is less. 
 - Upgrade your managed server to a larger managed server. 
 
-# Explanation of Self-signed certificate warning
+## Explanation of Self-signed certificate warning
 
 The error you are getting while accessing your Plesk/cPanel is because the certificate installed in the the server is open ssl.
 The server certificate is installed with open ssl to keep your connection secure when you are using the panel.
@@ -183,7 +143,58 @@ RewriteRule ^(.*)$ https://domainnamehere.com/$1 [R,L]
 ### END SSL --------------------------------------
 ```
 
-# WINDOWS
+----------------------------------------------------------------------------
+# 1&1 GENERAL FAQ
+----------------------------------------------------------------------------
+
+## 1&1 SSL: How to use with External Domain and External Name Servers:
+
+In order to use our certificates the domain must exist in the 1&1 Domain Center. If you want to use external nameservers, you have to go into Domain Center and set those nameservers to match what is shown on WHOIS. Then, you will have to create an email account at your mail host to do email-based domain validation. Create hostmaster@yourdomain.com email account so you can verify. Then you can setup the cert in 1&1 Manage SSL section. And use the email to confirm the certificate. And then it will let you download the key, cert and intermediate/ca cert files. 
+
+
+## 1&1 How and why TXT/SPF is becoming more and more required for e-mail:
+
+Many mail servers like Microsoft, Google, and AOL are starting to require DNS verification such as SPF and DKIM records in order to accept emails. This is done in an effort to fight SPAM. It places more responsibility on mail server admins to be compliant. 
+
+Here is some more information that will help you increase the reputation of your mail server so your emails will be delivered:
+
+TXT/SPF Records: Why are they needed?
+http://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/explanation-of-an-spf-record-a792807.html
+
+TXT/SPF Records: How to set up.
+http://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/add-or-remove-txt-records-a792509.html
+
+For more information how SPF records are built, see this 3rd party tool: http://spfwizard.net
+
+## 1&1 Mail: How to migrate domains and emails from one contract to another:
+
+1. Move the domains from old package to new package (Mail will go down):
+If you do not have as a target a hosting or server package, order a new contract / hosting package for email to go to.
+http://help.1and1.com/domains-c36931/transfer-domains-c79823/within-1and1-c38670/transfer-a-domain-between-1and1-packages-within-the-same-account-a792490.html
+
+2. Create the email accounts again in the new package (they will be empty)
+http://help.1and1.com/e-mail-and-office-c37589/1and1-mail-basic-c37590/getting-started-c85087/create-an-e-mail-account-in-your-1and1-package-a616894.html
+
+3. Migrate the mails from old to new mailboxes:
+https://help.1and1.com/e-mail-and-office-c37589/1and1-mail-business-c85093/using-the-product-c85138/migrate-e-mail-from-another-account-to-a-1and1-e-mail-account-a792498.html
+
+4. Create the subdomains again (they will be deleted during the transfer)
+http://help.1and1.com/search/click/controller/search/url/domains-c36931%252Fmanage-domains-c79822%252Fsubdomains-c37588%252Fcreate-a-subdomain-a594923.html/rank/1/q/create%2Bsubdomain
+
+5. Create the DNS again (it will be reset to defaults during the transfer) (set A record to new server IP address to host sites in that server)
+http://help.1and1.com/search/click/controller/search/url/domains-c36931%252Fmanage-domains-c79822%252Fdns-c37586%252Fchange-your-domain-s-ip-address-a-record-a599296.html/rank/1/q/edit%2Bdns
+
+6. Make sure everything functions in new package.
+Send and receive email, view the websites.
+
+7. Cancel the old package.
+Call us or go to cancel.1and1.com.
+http://help.1and1.com/search/click/controller/search/url/account-and-billing-c65577%252Faccount-details-c65578%252Fcancel-an-entire-package-a630738.html/rank/1/q/cancel%2Bpackage
+
+
+----------------------------------------------------------------------------
+# 1&1 WINDOWS SERVERS FAQ
+----------------------------------------------------------------------------
 
 ## 1&1 Dedicated Server: How to configure your Software RAID 1 Mirror in Windows Server 2012:
 
@@ -215,7 +226,6 @@ copy and paste all of what appears in notepad into a reply to this email. Then w
 
 http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/administration-c40119/turn-off-internet-explorer-enhanced-security-configuration-a696299.html
 
-
 ## Windows Server: How to mitigate SMBv1 Vulnerability in Windows Server 2003/2008 to help prevent WannaCry/malware infections:
 
 Disable SMB v1 in Managed Environments with Group Policy
@@ -232,7 +242,6 @@ For more information:
 The Deprecation of SMB1 – You should be planning to get rid of this old SMB dialect:
 https://blogs.technet.microsoft.com/josebda/2015/04/21/the-deprecation-of-smb1-you-should-be-planning-to-get-rid-of-this-old-smb-dialect/
 https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/
-
 
 ## How to install OpenVPN on Windows Cloud Servers
 
@@ -276,9 +285,9 @@ To enable .NET 3.5 SP1 on  Windows Server 2012 operating system:
     If the .NET 3.5 features were installed successfully, you should see a message confirming the installation was successful.
     Close out of Control Panel.
 
-# LINUX
-
-
+----------------------------------------------------------------------------
+# 1&1 LINUX SERVERS FAQ
+----------------------------------------------------------------------------
 
 ## 1&1 Dedicated Server: How to configure your Software RAID 1 Mirror in Linux:
 
@@ -314,8 +323,9 @@ http://help.1and1.com/servers-c37684/dynamic-cloud-server-linux-c73266/increase-
 https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/explanation-of-ssh-secure-shell-access-a595889.html
 https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/establish-an-ssh-connection-from-a-pc-a595890.html
 
-
-# PLESK
+----------------------------------------------------------------------------
+# PLESK FAQ 
+----------------------------------------------------------------------------
 
 ## 1&1 Plesk / SSL: How to issue, download, and install a root SSL in Plesk:
 
@@ -350,8 +360,8 @@ https://docs.plesk.com/en-US/12.5/deployment-guide/installing-plesk/after-instal
 https://kb.plesk.com/en/121484
 
 ----------------------------------------------------------------------------
-
 # SUPPORT WRAPPERS AND MACROS
+----------------------------------------------------------------------------
 
 SERCON with NO PASSWORD REQUIRED
 ```bash
@@ -364,13 +374,12 @@ TOP SITES GETTING TRAFFIC: sites getting traffic on a server. run this in /var/l
 zcat access.log* |awk '{print $11,$7}' | cut -d'?' -f1 | sort -T /kunden/homepages/backup/|uniq -c|sort -r -n -k 1 -T /kunden/homepages/backup/|head -n 15
 ```
 
-PLESK 12 PASSWORD FROM ROOT TERM:
-10-12:
+Get password for Plesk v10-12: from root terminal:
 
 ```bash
 /usr/local/psa/bin/admin --show-password
 ```
-Onyx:
+Get password for Plesk Onyx from root terminal:
 ```bash
 /usr/local/psa/bin/admin --get-login-link
 ```
@@ -384,6 +393,35 @@ Fix ```net_ratelimit: 37 callbacks suppressed``` while in rescue
 ```bash
 sysctl -w net.core.message_cost=0
 ```
+
+List largest installed package deb/ubuntuAh, 
+
+```bash
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
+```
+
+Add Default Routes to Linux servers:
+
+```bash
+route add -net 10.255.255.1 netmask 255.255.255.255 dev eth0 
+route add default gw 10.255.255.1 
+```
+
+Test the outbound smtp server running on the local machine:
+
+```bash
+echo "Subject: test" | /usr/sbin/sendmail -v test@example.com
+```
+
+Add this to your ~/.ssh/config to auto-accept all host keys for ssh out:
+
+```
+Host *
+    StrictHostKeyChecking no
+```
+
+----------------------------------------------------------------------------
+## Hard Disk Testing and Recovery
 
 View Software Raid on Linux Dedicated Servers:
 ```bash
@@ -415,12 +453,7 @@ update-grub
 sync & reboot
 ```
 
-List largest installed package deb/ubuntuAh, 
-
-```bash
-dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
-```
-## Mount partitions from Linux Dedi in Linux rescue:
+Mount partitions from Linux Dedi in Linux rescue:
 
 ```bash
 mount /dev/md1 /mnt
@@ -461,22 +494,3 @@ e2fsck -f /dev/mapper/vg00-var
 tune2fs -O +has_journal /dev/mapper/vg00-var
 ```
 
-Add Default Routes to Linux servers:
-
-```bash
-route add -net 10.255.255.1 netmask 255.255.255.255 dev eth0 
-route add default gw 10.255.255.1 
-```
-
-Test the outbound smtp server running on the local machine:
-
-```bash
-echo "Subject: test" | /usr/sbin/sendmail -v test@example.com
-```
-
-Add this to your ~/.ssh/config to auto-accept all host keys for ssh out:
-
-```
-Host *
-    StrictHostKeyChecking no
-```
