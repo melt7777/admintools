@@ -349,6 +349,16 @@ The username and passwords do not work. However, I was able to obtain the key fr
 https://docs.plesk.com/en-US/12.5/deployment-guide/installing-plesk/after-installing-plesk/install-a-license-key.70287/
 https://kb.plesk.com/en/121484
 
+# WHM/CPANEL FAQ 
+
+## Tutorial: Nameserver configuration on cPanel servers:
+
+This guide shows how to run your own DNS server within WHM.
+
+https://forums.cpanel.net/threads/tutorial-nameserver-configuration-on-cpanel-servers.404841/
+
+----------------------------------------------------
+
 # SUPPORT WRAPPERS AND MACROS
 
 SERCON with NO PASSWORD REQUIRED
