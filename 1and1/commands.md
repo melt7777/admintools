@@ -361,11 +361,6 @@ https://forums.cpanel.net/threads/tutorial-nameserver-configuration-on-cpanel-se
 
 # SUPPORT WRAPPERS AND MACROS
 
-SERCON with NO PASSWORD REQUIRED
-```bash
-ssh -t techsupp@sercon-us.schlund.de  techid
-```
-
 TOP SITES GETTING TRAFFIC: sites getting traffic on a server. run this in /var/log:
 
 ```bash
