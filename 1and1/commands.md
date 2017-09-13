@@ -51,7 +51,12 @@ IMAGES -> You can take an image of your server as-is and store it in the Cloud P
 
 > Same price per GB as the backup accounts above.
 
-You can also set it to automate this and image Daily or Weekly and how many images total to store, and it will charge you per those choices.
+You can also set it to automate this and image Daily or Weekly and how many images total to store, and it will charge you per those choices. Simply create the image at the time you want (the interval is based on the Created Time.) If you want it to run at 3PM every night, Run the first one at 3PM and select Daily Interval.
+
+Users Guide to Cloud Panel Images: https://whstatic.1and1.com/help/CloudServer/EN-US/d849917.html
+ 
+Users Guide to Cloud Panel Usage Costs: please read: https://whstatic.1and1.com/help/CloudServer/EN-US/d849918.html
+ 
 
 SNAPSHOTS -> These are taken on the Servers -> click a server -> Actions -> Create Snapshot.  These are temporary images you can create just before doing a major change, update, or upgrade. If the action fails you can roll back to when it was working good. These do not cost, but they are only stored for a couple days and not automatic.  Price per image. It includes the operating system and all SSDs.
 
