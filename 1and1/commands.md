@@ -43,9 +43,9 @@ For Root Cloud servers, in the Cloud Panel itself you have some other options fo
 
 BACKUP ACCOUNTS -> You can set up automated backup of files/folders from your server to a storage location on the cluster (hosts). It is all setup and managed through the 1&1 Cloud Backup app. 
 
-> Example: $11.52​/month for 160gb
-> Example: $5.76/month for 80gb
-> (Comes out to about ~ 7.2c/GB/month for backup files and/or images stored in the Cloud.)
+> * Example: $11.52​/month for 160gb
+> * Example: $5.76/month for 80gb
+> * (Comes out to about ~ 7.2c/GB/month for backup files and/or images stored in the Cloud.)
 
 IMAGES -> You can take an image of your server as-is and store it in the Cloud Panel Datacenter for future use / reimaging purpose in a disaster.  It depends on the size of your Cloud Server's SSD. 
 
