@@ -43,9 +43,13 @@ For Root Cloud servers, in the Cloud Panel itself you have some other options fo
 
 BACKUP ACCOUNTS -> You can set up automated backup of files/folders from your server to a storage location on the cluster (hosts). It is all setup and managed through the 1&1 Cloud Backup app. 
 
+> Example: $11.52​/month for 160gb
+> Example: $5.76/month for 80gb
+> (Comes out to about ~ 7.2c/GB/month for backup files and/or images stored in the Cloud.)
+
 IMAGES -> You can take an image of your server as-is and store it in the Cloud Panel Datacenter for future use / reimaging purpose in a disaster.  It depends on the size of your Cloud Server's SSD. 
 
-> Example: 80 GB $5.76/month 
+> Same price per GB as the backup accounts above.
 
 You can also set it to automate this and image Daily or Weekly and how many images total to store, and it will charge you per those choices.
 
@@ -53,25 +57,19 @@ SNAPSHOTS -> These are taken on the Servers -> click a server -> Actions -> Crea
 
 ## 1&1 Cloud Servers and VPS: What's the difference between Cloud Server and Virtual Server Cloud?
 
-The Full Cloud Server packages ( Cloud Server M) and the Virtual Cloud
-Server ( Cloud M) mainly differ in your options through the cloud
-panel. Overall they are are the same server, however with the Full
-Cloud server package you have options to spin up new servers without
-having to order a new package, The full cloud server offers the
-ability to create a private network and use load balancing and can be
-easily upgraded to the next size through the cloud panel itself.
-Additionally, the Full Cloud server allows for Cloning of servers
-which allows for quicker deployments of servers that need to be setup
-similarly. You may also create your own images by uploading a saved
-image from vmware, so you are able to install operating systems not
-offered by 1&1 or move directly from a local testing environment to a
-production server.
+The Full Cloud Server packages ( Cloud Server M) and the Virtual Cloud Server ( Cloud M) mainly differ in your options through the cloud panel. Overall they are are the same server, however with the Full Cloud server package you have more features:
 
-With the Cloud M/ Virtual cloud servers many of these additional
-features are not available. Instead it operates as a normal server you
-can still perform all the actions you would directly on the server in
-both packages but will not have access to the options mentioned above.
-Performance and resource wise they are the same server.
+Have up to 10 IPv4 addresses instead of just 1;
+Create/delete servers without having to order a new package;
+Create a private network and use load balancing;
+Easily upgrade to the next size through the cloud panel itself;
+Clone of servers which allows for quicker deployments of servers that need to be setup similarly;
+Create your own images by uploading a saved image from vmware, so you are able to install operating systems not
+offered by 1&1 or move directly from a local testing environment to a production server.
+
+With the Cloud M/ Virtual cloud servers many of these additional features are not available. Instead it operates as a single normal server. You can still perform all the actions you would directly on the server in both packages, but only the Root Cloud Servers have access to the options mentioned above.
+
+Performance/resource-wise they are the same server.
 
 
 ## 1&1 VPS: How to manage a 1&1 Virtuozzo/Parallels VPS using Parallels Power Panel:
@@ -299,7 +297,7 @@ https://ioflood.com/blog/2015/04/21/setting-up-software-raid-mdadm-status-alert-
 
 LVM is used so that you can assign storage easily on the go without partitioning.
 
-Here is the information on how to expand your Logical Volumes from the physical stoage in your Cloud Server.
+Here is the information on how to expand your Logical Volumes from the physical storage in your Cloud Server.
 
 The Why: 
 http://help.1and1.com/servers-c37684/dedicated-server-linux-c37687/administration-c37694/explanation-of-logical-volume-management-lvm-a756052.html
@@ -350,6 +348,24 @@ https://docs.plesk.com/en-US/12.5/deployment-guide/installing-plesk/after-instal
 https://kb.plesk.com/en/121484
 
 # WHM/CPANEL FAQ 
+
+## How to do the initial configuration for WHM/cPanel on 1&1 cloud Servers:
+
+Here are the official guides from cPanel:
+
+cPanel Documentation: https://documentation.cpanel.net/
+WHM Documentation: https://documentation.cpanel.net/display/66Docs/WebHost+Manager+-+WHM+User+Documentation
+Youtube Videos: https://www.youtube.com/user/cpaneltv
+
+As for the DNS Resolvers: 
+
+For simplicity, you can use Google DNS Resolvers, OpenDNS or FreeNOM DNS.
+
+Example: `8.8.8.8` and `8.8.4.4` are Google's Public DNS Servers.
+
+If you want to use 1&1 Resolvers, these depend on your DHCP lease. To find out what resolvers to use, you would have to use SSH to access the server's terminal and get the gateway IP from the DHCP lease using the command  `ifconfig`.
+
+The DNS Resolvers usually follow the format 10.255.255.x.
 
 ## Tutorial: Nameserver configuration on cPanel servers:
 
