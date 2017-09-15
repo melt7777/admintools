@@ -58,23 +58,22 @@ Users Guide to Cloud Panel Images: https://whstatic.1and1.com/help/CloudServer/E
 Users Guide to Cloud Panel Usage Costs: please read: https://whstatic.1and1.com/help/CloudServer/EN-US/d849918.html
  
 
-SNAPSHOTS -> These are taken on the Servers -> click a server -> Actions -> Create Snapshot.  These are temporary images you can create just before doing a major change, update, or upgrade. If the action fails you can roll back to when it was working good. These do not cost, but they are only stored for a couple days and not automatic.  Price per image. It includes the operating system and all SSDs.
+SNAPSHOTS -> These are taken on the Servers -> click a server -> Actions -> Create Snapshot.  These are temporary images you can create just before doing a major change, update, or upgrade. If the action fails you can roll back to when it was working good. These do not cost, but they are only stored for a couple days and not automatic.  Also, they need to be deleted when re-imaging and when upgrading resources. You would create an Image instead if you are going to take these actions.
 
 ## 1&1 Cloud Servers and VPS: What's the difference between Cloud Server and Virtual Server Cloud?
 
 The Full Cloud Server packages ( Cloud Server M) and the Virtual Cloud Server ( Cloud M) mainly differ in your options through the cloud panel. Overall they are are the same server, however with the Full Cloud server package you have more features:
 
-Have up to 10 IPv4 addresses instead of just 1;
-Create/delete servers without having to order a new package;
-Create a private network and use load balancing;
-Easily upgrade to the next size through the cloud panel itself;
-Clone of servers which allows for quicker deployments of servers that need to be setup similarly;
-Create your own images by uploading a saved image from vmware, so you are able to install operating systems not
-offered by 1&1 or move directly from a local testing environment to a production server.
+* Have up to 10 IPv4 addresses instead of just 1;
+* Create/delete servers without having to order a new package;
+* Create a private network and use load balancing;
+* Easily upgrade to the next size through the cloud panel itself;
+* Clone of servers which allows for quicker deployments of servers that need to be setup similarly;
+* Create your own images by uploading a saved image from vmware, so you are able to install operating systems not offered by 1&1 or move directly from a local testing environment to a production server.
 
 With the Cloud M/ Virtual cloud servers many of these additional features are not available. Instead it operates as a single normal server. You can still perform all the actions you would directly on the server in both packages, but only the Root Cloud Servers have access to the options mentioned above.
 
-Performance/resource-wise they are the same server.
+**Performance/resource-wise they are the same server.**
 
 
 ## 1&1 VPS: How to manage a 1&1 Virtuozzo/Parallels VPS using Parallels Power Panel:
