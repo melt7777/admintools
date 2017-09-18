@@ -351,6 +351,13 @@ The username and passwords do not work. However, I was able to obtain the key fr
 https://docs.plesk.com/en-US/12.5/deployment-guide/installing-plesk/after-installing-plesk/install-a-license-key.70287/
 https://kb.plesk.com/en/121484
 
+
+## Plesk: How to upgrade MySQL/MariaDB on Linux
+
+This can be tricky. Please take a backup of all databases and website files before you begin. Then, read the article entirely before you make any changes to your system:
+
+https://support.plesk.com/hc/en-us/articles/213403429-How-to-upgrade-MySQL-MariaDB-on-Linux
+
 # WHM/CPANEL FAQ 
 
 ## How to do the initial configuration for WHM/cPanel on 1&1 cloud Servers:
