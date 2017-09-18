@@ -329,13 +329,17 @@ https://help.1and1.com/ssl-certificates-c85183/administration-c85185/ssl-certifi
 
 Step 3: Then, once you have the 3 files, you can install the SSL. Here are some examples:
 
-https://help.1and1.com/ssl-certificates-c85183/administration-c85185/ssl-certificate-managed-by-you-c85188/install-an-ssl-certificate-managed-by-you-a792810.html
+* https://help.1and1.com/ssl-certificates-c85183/administration-c85185/ssl-certificate-managed-by-you-c85188/install-an-ssl-certificate-managed-by-you-a792810.html
 
-https://docs.plesk.com/en-US/onyx/administrator-guide/plesk-administration/securing-plesk/securing-plesk-and-the-mail-server-with-ssltls-certificates.59466/
-Videos: https://www.youtube.com/watch?v=Oq6-YViDzoc   and https://youtube.com/watch?v=8z8h8CRQ-Yg
-https://support.plesk.com/hc/en-us/articles/213946825-How-to-install-SSL-certificate-for-a-domain-in-Plesk
-NOTE: I usually just put the name of the certificate  as "domain   timestamp"   e.g.     "example.com 20170727"  but you can name it what you like. THEN, simply go down to the "3 Choose file Buttons".
-Upload those 3 files you got from "Manage SSL" to these 3 buttons:  key is the key, cert is the cert, and  INTERMEDIATE is the same as a CA cert. Then click "Upload" just below there. Then proceed to the Hosting settings and select that SSL from the drop down.
+* https://docs.plesk.com/en-US/onyx/administrator-guide/plesk-administration/securing-plesk/securing-plesk-and-the-mail-server-with-ssltls-certificates.59466/
+
+* Videos: https://www.youtube.com/watch?v=Oq6-YViDzoc   and https://youtube.com/watch?v=8z8h8CRQ-Yg
+
+* https://support.plesk.com/hc/en-us/articles/213946825-How-to-install-SSL-certificate-for-a-domain-in-Plesk
+
+* NOTE: I usually just put the name of the certificate  as "domain   timestamp"   e.g.     "example.com 20170727"  but you can name it what you like. THEN, simply go down to the "3 Choose file Buttons".
+
+* Upload those 3 files you got from "Manage SSL" to these 3 buttons:  key is the key, cert is the cert, and  INTERMEDIATE is the same as a CA cert. Then click "Upload" just below there. Then proceed to the Hosting settings and select that SSL from the drop down.
 
 ## Plesk: Configuring Plesk as a Mail Server:
 
@@ -359,6 +363,20 @@ This can be tricky. Please take a backup of all databases and website files befo
 https://support.plesk.com/hc/en-us/articles/213403429-How-to-upgrade-MySQL-MariaDB-on-Linux
 
 # WHM/CPANEL FAQ 
+
+## How does 1&1 offer WHM/cPanel on our servers?
+
+* WHM/cPanel is its own management panel available on Cloud VPS and Cloud Servers.
+
+* You can choose to re-image the server using Centos7 with WHM/cPanel for an extra $15/month. This installs basically 2 panels: WHM (the root/administrator/server configs) and cPanel (The webspaces configs). (Plesk, by contrast, has everything in one panel.)  
+
+> Many hosts such as inmotion, rackspace, godaddy offer server VPS where the WHM is managed by the hosting company, and the customer only uses cPanel (the customer webspace interface) to manage their server. 
+
+> For our managed/shared packages, we have a custom panel instead of cPanel called 1&1 Control Panel. That is used instead (to set up emails, domains, etc.)
+
+Q: Can you put that on Virtual Server Cloud M plan?
+
+A: Yes, but a VPS M has only 1 GB of ram. WHM would use most of that overhead. Recommend a L or better if they want a panel like WHM or Plesk.
 
 ## How to do the initial configuration for WHM/cPanel on 1&1 cloud Servers:
 
