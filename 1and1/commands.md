@@ -17,7 +17,7 @@ http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/rescue-and-
 4. You can also learn about the other recovery tools provided to our root-server customers found here: 
 http://help.1and1.com/servers-c37684/dedicated-server-linux-c37687/rescue-and-recovery-c37690
 
-## 1&1 Dedicated Root Server Backup Options:
+## 1&1 Dedicated Root Servers: Backup Options:
 
 Here are the backup options for your server along with brief explanation:
 
@@ -33,11 +33,43 @@ PROFESSIONAL BACKUP: Backup storage is provided similar to FTP but it's managed 
   Professional Backup XL (50 GB)	--	$29.99/mo  
   Professional Backup XXL (100 GB)	--	$49.00/mo  
   
-## 1&1 Dedicated Root Servers IPv4 Addresses:
+## 1&1 Dedicated Root Servers: Adding IPv4 Addresses:
 
 An additional IPv4 will be $0.99/month billed quarterly. You can add up to 7 to your dedicated server for a total supported of 8 IPv4. Please reply with Phone PIN for verification and we will order 1 additional IPv4 for your server. It takes about 15 minutes for it to be ready to use. Don't forget to add it to your firewall.
 
-## 1&1 Root Cloud Server Backup Options:
+## 1&1 Root Cloud Servers: Getting Started:
+
+**How to find the initial password for your server:**
+
+If you have used a 1&1 Image to image your server and you did not choose the initial password during that process, the Cloud Panel created a new password for you and stored it here so you could get it. 
+
+To change the password you have to do it inside your OS. Note: If you do that, the initial password in the Cloud Panel does not update and is no longer valid. We would not have any knowledge of the new password, so keep it safe.
+
+For details:
+http://help.1and1.com/servers-c37684/1and1-cloud-server-c85165/getting-started-c85194/show-initial-password-for-1and1-cloud-server-a792646.html
+
+**How to configure the Cloud Server Firewall:**
+
+Root Cloud Servers and Cloud VPS have an inbound external firewall provided by 1&1. This is in addition to firewalls that you can install and/or use inside your server's Operating System. 
+
+For more details how to set up the firewall in the Cloud Panel:
+http://help.1and1.com/servers-c37684/1and1-cloud-server-c85165/getting-started-c85194/set-up-a-firewall-on-1and1-cloud-server-a792659.html
+
+**How to connect a domain to your server:**
+
+You can edit the DNS settings of a domain to direct traffic to your server. To tell your domain that you want to host your website in your server, you can set the A Record of your domain's DNS settings to your Server's IP address.
+
+Here is a guide how to do it when 1&1 is your DNS provider:
+http://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/change-your-domain-s-ip-address-a-record-a599296.html
+
+**How to open the FTP port if you cannot FTP to your server:**
+
+> Note: Sometimes you have to open port 20-21 as port 20 is the DATA port for ACTIVE FTP sessions. 
+
+https://help.1and1.com/servers-c37684/1and1-cloud-server-c85165/troubleshooting-c85196/troubleshoot-ftp-issues-with-your-1and1-cloud-server-a792828.html
+
+
+## 1&1 Root Cloud Servers: Backup Options:
 
 For Root Cloud servers, in the Cloud Panel itself you have some other options for Backup and Disaster Recovery.
 
@@ -57,12 +89,11 @@ Users Guide to Cloud Panel Images: https://whstatic.1and1.com/help/CloudServer/E
  
 Users Guide to Cloud Panel Usage Costs: please read: https://whstatic.1and1.com/help/CloudServer/EN-US/d849918.html
  
-
 SNAPSHOTS -> These are taken on the Servers -> click a server -> Actions -> Create Snapshot.  These are temporary images you can create just before doing a major change, update, or upgrade. If the action fails you can roll back to when it was working good. These do not cost, but they are only stored for a couple days and not automatic.  Also, they need to be deleted when re-imaging and when upgrading resources. You would create an Image instead if you are going to take these actions.
 
-## 1&1 Cloud Servers and VPS: What's the difference between Cloud Server and Virtual Server Cloud?
+## 1&1 Root Cloud Servers and Cloud VPS: What's the difference between Cloud Server and Virtual Server Cloud?
 
-The Full Cloud Server packages ( Cloud Server M) and the Virtual Cloud Server ( Cloud M) mainly differ in your options through the cloud panel. Overall they are are the same server, however with the Full Cloud server package you have more features:
+The Full (Root) Cloud Server packages ( Cloud Server M) and the Virtual Cloud Server ( Cloud M) mainly differ in your options through the cloud panel. Overall they are are the same server, however with the Full Cloud server package you have more features:
 
 * Have up to 10 IPv4 addresses instead of just 1;
 * Create/delete servers without having to order a new package;
@@ -89,7 +120,7 @@ http://help.1and1.com/servers-c37684/virtual-private-server-c63343/virtuozzo-pow
 ## VNC: For accessing rescue mode, we recommend UltraVNC Viewer Portable: 
 http://www.uvnc.com/component/jdownloads/summary/5/97.html                                                                    
 
-## How to mitigate 504 errors on the Managed Cloud Servers:
+## Managed Cloud Servers: How to mitigate 504 errors on the Managed Cloud Servers:
 
 A feature of the Managed Cloud Panel that we are finding to be helpful with 504 issues: You can change the resources of your server between the web server and the database server. In the Cloud Panel click Servers then click your server in the main Panel. Then look below and you will see the change Resources button. Choose custom and change your allocation as you see fit. Note: This may restart the services on the server which takes a moment. 
 
@@ -143,6 +174,37 @@ RewriteRule ^(.*)$ https://domainnamehere.com/$1 [R,L]
 ### END SSL --------------------------------------
 ```
 
+## Other htaccess redirects:
+
+301 (Permanent) Redirect: Point an entire site to a different URL on a permanent basis. This is the most common type of redirect and is useful in most situations. In this example, we are redirecting to the "mt-example.com" domain:
+
+```
+# This allows you to redirect your entire website to any other domain
+Redirect 301 / http://mt-example.com/
+```
+
+302 (Temporary) Redirect: Point an entire site to a different temporary URL. This is useful for SEO purposes when you have a temporary landing page and plan to switch back to your main landing page at a later date:
+
+```
+# This allows you to redirect your entire website to any other domain
+Redirect 302 / http://mt-example.com/
+
+Redirect index.html to a specific subfolder:
+
+# This allows you to redirect index.html to a specific subfolder
+Redirect /index.html http://example.com/newdirectory/
+
+Redirect an old file to a new file path:
+
+# Redirect old file path to new file path
+Redirect /olddirectory/oldfile.html http://example.com/newdirectory/newfile.html
+Redirect to a specific index page:
+
+# Provide Specific Index Page (Set the default handler)
+DirectoryIndex index.html
+```
+
+
 # 1&1 GENERAL FAQ
 
 ## 1&1 SSL: How to use with External Domain and External Name Servers:
@@ -192,11 +254,15 @@ http://help.1and1.com/search/click/controller/search/url/account-and-billing-c65
 
 # 1&1 WINDOWS SERVERS FAQ
 
-## 1&1 Dedicated Server: How to configure your Software RAID 1 Mirror in Windows Server 2012:
+## Windows Server: How to access your server using RDP (Remote Desktop)
+
+https://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/organization-via-control-panel-c39514/log-in-to-a-windows-server-via-remote-desktop-a749713.html
+
+## 1&1 Dedicated Windows Server: How to configure your Software RAID 1 Mirror in Windows Server 2012:
 
 https://blogs.technet.microsoft.com/tip_of_the_day/2014/10/10/tip-of-the-day-configuring-disk-mirroring-for-windows-server-2012/
 
-## Windows Dedicated Server: How to get the SMART data from the hard disks.
+## 1&1 Dedicated Windows Server: How to get the SMART data from the hard disks.
 
 The output of the drive smart test is preferred.... We need at least the drive serial. If you don't want to reboot into rescue and run the smart tests, or have us do so, you can install the following free tool on windows. This is the quickest way to get the required information without disturbing running processes:
 
@@ -281,6 +347,17 @@ To enable .NET 3.5 SP1 on  Windows Server 2012 operating system:
     If the .NET 3.5 features were installed successfully, you should see a message confirming the installation was successful.
     Close out of Control Panel.
 
+
+## Troubleshooting Remote Desktop Licensing Issues
+
+Support for Microsoft CAL and RDP CAL licensing is provided by Microsoft. 1&1 is not able to provide support for this.
+
+However, To help you get started with Remote Desktop Licensing (RD Licensing) or Terminal Services Licensing (TS Licensing), and to troubleshoot any problems you may be having, see the following guide to see if helps you resolve your issue:
+
+https://technet.microsoft.com/en-us/library/hh553162(v=ws.10).aspx
+
+
+
 # 1&1 LINUX SERVERS FAQ
 
 ## 1&1 Dedicated Server: How to configure your Software RAID 1 Mirror in Linux:
@@ -319,6 +396,12 @@ https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/esta
 
 # PLESK FAQ 
 
+## Ports used by Plesk
+
+Here is a list of the ports used by Plesk so you know what services run on what ports. Then you can open the required ports in your firewall:
+
+https://docs.plesk.com/en-US/12.5/administrator-guide/plesk-administration/ports-used-by-plesk.64950/
+
 ## 1&1 Plesk / SSL: How to issue, download, and install a root SSL in Plesk:
 
 Step 1: Setup the SSL in 1&1 Manage SSL section.
@@ -356,11 +439,26 @@ https://docs.plesk.com/en-US/12.5/deployment-guide/installing-plesk/after-instal
 https://kb.plesk.com/en/121484
 
 
+## Plesk: How to upgrade system packages the correct way on Plesk for Linux
+
+Since Plesk manages all of the software on your server, you should go through Plesk whenever you make changes to your server.
+
+Here is the guide:
+https://docs.plesk.com/en-US/onyx/administrator-guide/server-administration/system-updates-plesk-for-linux-only.75822/
+
 ## Plesk: How to upgrade MySQL/MariaDB on Linux
 
-This can be tricky. Please take a backup of all databases and website files before you begin. Then, read the article entirely before you make any changes to your system:
+This can be tricky.
+
+> WARNING: This is NOT a Plesk-supported upgrade. 
+
+Please take a backup of all databases and website files before you begin. Then, read the article entirely before you make any changes to your system:
 
 https://support.plesk.com/hc/en-us/articles/213403429-How-to-upgrade-MySQL-MariaDB-on-Linux
+
+Here is an article for going from 5.5 to 5.6-5.7 on Plesk for Linux:
+
+https://support.plesk.com/hc/en-us/articles/213403429-How-to-upgrade-MySQL-5-5-to-5-6-5-7-on-Linux
 
 # WHM/CPANEL FAQ 
 
