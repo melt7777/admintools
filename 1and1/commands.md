@@ -500,6 +500,27 @@ This guide shows how to run your own DNS server within WHM.
 
 https://forums.cpanel.net/threads/tutorial-nameserver-configuration-on-cpanel-servers.404841/
 
+
+# Wordpress FAQ
+
+## What is Wordpress? 
+
+Wordpress is a CMS. It is made of files and a database and it is all loaded by index.php in the webroot. The wp-config.php file in the webroot is how the website code knows how to load the database. 
+
+Wordpress.com is a Wordpress Multisite. You can sign up and have your own yourawesomesite.wordpress.com site with some limited features. 
+
+Wordpress.org is the one you want. This is the open-source CMS community. It has all wordpress documentation called the Wordpress Codex. 
+
+http://wpbeginner.com is a fantastic resource with helpful guides.
+
+
+## What is Wordpress Multi-Site?
+
+Multisite is a WordPress feature which allows users to create a network of sites on a single WordPress installation. 
+
+For more details and how to use it: http://www.wpbeginner.com/glossary/multisite/
+
+
 ----------------------------------------------------
 
 # SUPPORT WRAPPERS AND MACROS
