@@ -468,9 +468,11 @@ https://support.plesk.com/hc/en-us/articles/213403429-How-to-upgrade-MySQL-5-5-t
 
 * You can choose to re-image the server using Centos7 with WHM/cPanel for an extra $15/month. This installs basically 2 panels: WHM (the root/administrator/server configs) and cPanel (The webspaces configs). (Plesk, by contrast, has everything in one panel.)  
 
-> Many hosts such as inmotion, rackspace, godaddy offer server VPS where the WHM is managed by the hosting company, and the customer only uses cPanel (the customer webspace interface) to manage their server. 
+Many hosts such as inmotion, rackspace, godaddy offer server VPS where the WHM is managed by the hosting company, and the customer only uses cPanel (the customer webspace interface) to manage their server. 
 
-> For our managed/shared packages, we have a custom panel instead of cPanel called 1&1 Control Panel. That is used instead (to set up emails, domains, etc.)
+With 1&1 WHM cPanel, You have to configure the entire WHM server using the WHM (root/admin) interface as well as the cPanel (webspace/customer-facing) interface.
+
+For our managed/shared packages, we have a custom panel instead of cPanel called 1&1 Control Panel. That is used instead (to set up emails, domains, etc.)
 
 Q: Can you put that on Virtual Server Cloud M plan?
 
@@ -519,6 +521,11 @@ http://wpbeginner.com is a fantastic resource with helpful guides.
 Multisite is a WordPress feature which allows users to create a network of sites on a single WordPress installation. 
 
 For more details and how to use it: http://www.wpbeginner.com/glossary/multisite/
+
+## How to increase WP memory limit for PHP:
+
+Increasing WP Memory Limit using .htaccess and/or php.ini:
+https://docs.woocommerce.com/document/increasing-the-wordpress-memory-limit/
 
 
 ----------------------------------------------------
