@@ -144,6 +144,20 @@ https://social.technet.microsoft.com/Forums/Lync/en-US/e22abc77-fb2a-49eb-bb30-e
 
 At this time we are on the first step. When you reply with the go-ahead and verification PIN, we will file the ticket to swap the bad disk out. 
 
+## 1&1 Dedicated Root Server: 1&1 Professional Backup for Linux
+
+How to install:
+
+https://help.1and1.com/servers-c37684/professional-backup-c85126/download-and-install-1and1-professional-backup-on-a-linux-system-a792347.html
+
+How to back up files and folders:
+
+https://help.1and1.com/servers-c37684/professional-backup-c85126/back-up-linux-files-and-folders-a792348.html
+
+How to manage the schedules:
+
+https://help.1and1.com/servers-c37684/professional-backup-c85126/manage-1and1-professional-backup-schedules-on-a-linux-system-a792349.html
+
 ## How to reduce CPU load on a web server:
 
 You can login to your server using SSH and see that the CPU resources are being loaded with php. This is because you are getting so much traffic that you are using all the resources of the server. You have a few options:
