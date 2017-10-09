@@ -542,6 +542,13 @@ Increasing WP Memory Limit using .htaccess and/or php.ini:
 https://docs.woocommerce.com/document/increasing-the-wordpress-memory-limit/
 
 
+# Bitnami.com Cloud Applications FAQ
+
+How to use phpmyadmin with Bitnami Apps?
+
+https://docs.bitnami.com/virtual-machine/components/phpmyadmin/ 
+
+
 ----------------------------------------------------
 
 # SUPPORT WRAPPERS AND MACROS
