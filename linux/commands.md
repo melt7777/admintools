@@ -1,19 +1,50 @@
-#####################################
+# Github FAQ
+
+Git Password Cache:
+
+`git config --global credential.helper cache`
+
+Making a Fork:
+https://help.github.com/articles/configuring-a-remote-for-a-fork
+
+Pushing a Branch:
+https://help.github.com/articles/pushing-to-a-remote#pushing-a-branch
+
+```
+git remote set-url upstream  <THEIR_REMOTE_URL> 
+git fetch upstream branch
+# Grab the upstream remote's branches
+```
+
+
+# Download files from a web server using wget
+```
+#!/bin/bash
+DLURL="http://path/to/files"
+FW="amdgpu-pro-fw.tgz"
+KHEAD="linux-headers-4.13.0-xmos+_1_amd64.deb"
+KIMG="linux-image-4.13.0-xmos+_1_amd64.deb"
+mkdir -p /usr/src/updates
+wget $DLURL/$FW -O /usr/src/updates/$FW
+wget $DLURL/$KHEAD -O /usr/src/updates/$KHEAD
+wget $DLURL/$KIMG -O /usr/src/updates/$KIMG
+```
+
+
 # Plesk Troubleshooting
-#####################################
 
 
 Get the Plesk Admin password from root SSH:
 
-Plesk 11/12.x: /usr/local/psa/bin/admin --show-password
+Plesk 11/12.x: `/usr/local/psa/bin/admin --show-password`
 
-Plesk Onyx: /usr/local/psa/bin/admin --get-login-link
+Plesk Onyx: `/usr/local/psa/bin/admin --get-login-link`
 
 FIX Broken network on WINDEDI:
-netsh interface ip set address "Local Area Connection" dhcp 
+`netsh interface ip set address "Local Area Connection" dhcp`
 
 FIX net_ratelimit: 37 callbacks suppressed in rescue
-sysctl -w net.core.message_cost=0
+`sysctl -w net.core.message_cost=0`
 
 #####################################
 # Hard Disk Testing and Mounting/Recovery
