@@ -231,3 +231,10 @@ deny from XXX.XXX.XXX.XXX
 Or you can obviously firewall the IP(s).
 
 Keep in mind that these are just a few pretty basic commands that would give you an idea about HTTP requests that the server has gotten.
+
+## To copy a disk to a smaller disk (example: copy /dev/sda to a smaller disk /dev/sdb):
+
+```bash
+apt -y install pv
+pv -tpreb /dev/sda | dd of=/dev/sdb bs=4K conv=notrunc,noerror,sync
+```

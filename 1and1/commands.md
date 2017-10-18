@@ -95,12 +95,15 @@ SNAPSHOTS -> These are taken on the Servers -> click a server -> Actions -> Crea
 
 The Full (Root) Cloud Server packages ( Cloud Server M) and the Virtual Cloud Server ( Cloud M) mainly differ in your options through the cloud panel. Overall they are are the same server, however with the Full Cloud server package you have more features:
 
+*Note: May not be complete list of differences. See 1and1.com for details.*
+
 * Have up to 10 IPv4 addresses instead of just 1;
 * Create/delete servers without having to order a new package;
 * Create a private network and use load balancing;
 * Easily upgrade to the next size through the cloud panel itself;
 * Clone of servers which allows for quicker deployments of servers that need to be setup similarly;
 * Create your own images by uploading a saved image from vmware, so you are able to install operating systems not offered by 1&1 or move directly from a local testing environment to a production server.
+* Have unlimited 1and1 webmail basic accounts (instead of only 250 with the Virtual Server Cloud.)
 
 With the Cloud M/ Virtual cloud servers many of these additional features are not available. Instead it operates as a single normal server. You can still perform all the actions you would directly on the server in both packages, but only the Root Cloud Servers have access to the options mentioned above.
 
@@ -157,6 +160,8 @@ https://help.1and1.com/servers-c37684/professional-backup-c85126/back-up-linux-f
 How to manage the schedules:
 
 https://help.1and1.com/servers-c37684/professional-backup-c85126/manage-1and1-professional-backup-schedules-on-a-linux-system-a792349.html
+
+# Web server admin - general FAQ
 
 ## How to reduce CPU load on a web server:
 
@@ -217,6 +222,16 @@ Redirect to a specific index page:
 # Provide Specific Index Page (Set the default handler)
 DirectoryIndex index.html
 ```
+
+## I have installed my SSL, and https:// URL brings up my site, but I am not getting the green padlock. Why not?
+
+You have a mixed content error. You need to update your code to reflect https:// on all URLs.
+
+To see evidence of this, you can right-click on your website and "View Source". Then Control-F to find, and search for "https://"
+
+Please have your developer update your website code to use all secure links https instead of http, and the site will show the padlock.
+
+*For more details about mixed content errors: https://wpengine.com/support/mixed-content-errors-no-green-padlock-page/*
 
 
 # 1&1 GENERAL FAQ
