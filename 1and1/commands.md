@@ -287,6 +287,17 @@ http://help.1and1.com/search/click/controller/search/url/account-and-billing-c65
 
 https://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/organization-via-control-panel-c39514/log-in-to-a-windows-server-via-remote-desktop-a749713.html
 
+## Windows Server: How to disable password expiration
+
+To disable password expiration, follow these steps:
+
+1. Click Start > Administrative Tools > Computer Management
+2. Then expand Computer Management > System Tools > Local Users and Groups > Users.
+3. Right click on root
+4. Select Properties
+5. Click on the checkbox for "Password never expires".
+
+
 ## 1&1 Dedicated Windows Server: How to configure your Software RAID 1 Mirror in Windows Server 2012:
 
 https://blogs.technet.microsoft.com/tip_of_the_day/2014/10/10/tip-of-the-day-configuring-disk-mirroring-for-windows-server-2012/
