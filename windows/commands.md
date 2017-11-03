@@ -15,7 +15,11 @@ Have you ever had zip or rar files buried deep into a directory structure that y
 
 ### Extract all zips in Windows using 7zip 
 
-To get a list of rar files:  dir /s /b . | findstr /i .rar
+To get a list of rar files:  
+
+`dir /s /b . | findstr /i .rar`
+
+Then extract: 
 
 `for /R "C:\root\folder" %%I in ("*.zip") do ("%ProgramFiles(x86)%\7-Zip\7z.exe" x -y -o"%%~dpI" "%%~fI")`
 
