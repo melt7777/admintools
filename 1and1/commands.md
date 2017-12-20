@@ -149,17 +149,40 @@ At this time we are on the first step. When you reply with the go-ahead and veri
 
 ## 1&1 Dedicated Root Server: 1&1 Professional Backup for Linux
 
-How to install:
+Explanation of 1&1 Professional Backup
+
+1&1 Professional Backup is offered as automated backup solution as an alternative to the FTP Server Backup Space also offered by 1&1.
+
+https://help.1and1.com/servers-c37684/professional-backup-c85126/explanation-of-1and1-professional-backup-a792363.html
+
+Install on linux:
 
 https://help.1and1.com/servers-c37684/professional-backup-c85126/download-and-install-1and1-professional-backup-on-a-linux-system-a792347.html
 
-How to back up files and folders:
+Back up files and folders on linux:
 
 https://help.1and1.com/servers-c37684/professional-backup-c85126/back-up-linux-files-and-folders-a792348.html
 
-How to manage the schedules:
+Manage the schedules on linux:
 
 https://help.1and1.com/servers-c37684/professional-backup-c85126/manage-1and1-professional-backup-schedules-on-a-linux-system-a792349.html
+
+## 1&1 Dedicated Root Server: 1&1 Professional Backup for Windows
+
+Explanation of 1&1 Professional Backup
+
+1&1 Professional Backup is offered as automated backup solution as an alternative to the FTP Server Backup Space also offered by 1&1.
+
+https://help.1and1.com/servers-c37684/professional-backup-c85126/explanation-of-1and1-professional-backup-a792363.html
+
+Download and Install 1&1 Professional Backup on a Windows System:
+
+https://help.1and1.com/servers-c37684/professional-backup-c85126/download-and-install-1and1-professional-backup-on-a-windows-system-a792353.html
+
+Manage 1&1 Professional Backup Selections on a Windows System:
+
+https://help.1and1.com/servers-c37684/professional-backup-c85126/manage-1and1-professional-backup-selections-on-a-windows-system-a792358.html
+
 
 # Web server admin - general FAQ
 
