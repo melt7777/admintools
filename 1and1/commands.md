@@ -459,13 +459,31 @@ https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/esta
 
 # PLESK FAQ 
 
+Plesk is a Web Server Management Panel system that allows an administrator a web-based GUI to manage their server. This product is made by Plesk.com, a 1&1 software partner. 
+
+## Scope of support
+
+The administration and management of a root server is the responsibility of the customer. If the server is accessible via SSH and/or RDP, then hosting is being provided. We do know how to troubleshoot basic Plesk issues and are happy to take a quick look or provide guidance and documentation to help you.  However, admin work is not done by 1&1 or by Plesk. If there is a problem with Plesk, or an issue that cannot be resolved using standard techniques, a 1&1 agent may opt to create a ticket to Plesk to get their assistance for you. This does take time to complete. 
+
 ## Ports used by Plesk
 
 Here is a list of the ports used by Plesk so you know what services run on what ports. Then you can open the required ports in your firewall:
 
 https://docs.plesk.com/en-US/12.5/administrator-guide/plesk-administration/ports-used-by-plesk.64950/
 
-## 1&1 Plesk / SSL: How to issue, download, and install a root SSL in Plesk:
+### Ports Most commonly used:
+
+* TCP 20-21: FTP
+* TCP 22: SSH (Linux servers)
+* TCP 25: Inbound Mail Servers
+* TCP/UDP 53: DNS
+* TCP 3389: RDP (Windows servers)
+* TCP 2083: WHM/cPanel WHM (Root) Interface
+* TCP 2087: WHM/cPanel cPanel (Customer-facing) Interface
+* TCP 8443: Plesk Interface
+* TCP 8447: Plesk Update/Upgrades
+
+## 1&1 Plesk / SSL: How to issue, download, and install a root SSL from 1&1 in Plesk:
 
 Step 1: Setup the SSL in 1&1 Manage SSL section.
 https://help.1and1.com/ssl-certificates-c85183/administration-c85185/ssl-certificate-managed-by-you-c85188/ssl-certificate-setup-process-using-activation-e-mail-a792728.html
@@ -487,12 +505,36 @@ Step 3: Then, once you have the 3 files, you can install the SSL. Here are some 
 
 * Upload those 3 files you got from "Manage SSL" to these 3 buttons:  key is the key, cert is the cert, and  INTERMEDIATE is the same as a CA cert. Then click "Upload" just below there. Then proceed to the Hosting settings and select that SSL from the drop down.
 
+## Plesk: Configuring Backups
+
+Here is the Plesk guide for their Backup Manager. Plesk can automate your backups and ship them out of the server. It is very important to ship the backups outside of the server and/or download them yourself. Always have a backup.
+
+https://docs.plesk.com/en-US/onyx/administrator-guide/backing-up-and-restoration.59256/
+
+You can also back up individual accounts and sites for your users:
+
+https://docs.plesk.com/en-US/onyx/administrator-guide/backing-up-and-restoration/backing-up-individual-accounts-and-sites.59267/
+
+And you can provide them instructions for restoring the backups:
+
+https://docs.plesk.com/en-US/onyx/customer-guide/advanced-backing-up-and-recovering-websites/restoring-backups.65200/
+
+
 ## Plesk: Configuring Plesk as a Mail Server:
 
+Running your own mail server requires more configuration of server and DNS.
+
+Here is the information on configuring Plesk for email:
 https://docs.plesk.com/en-US/onyx/administrator-guide/mail/configuring-serverwide-mail-settings.59430/
 
 You may also want to see "Securing your Mail server" here:
 https://docs.plesk.com/en-US/onyx/video-tutorials/
+
+You will also want to make sure your server has a Fully Qualified Domain Name (such as mail.mydomain.com) and that the Reverse DNS for the IP address matches that domain/subdomain/FQDN's A record. 
+
+You will also want to make sure you have the mail ports opened in your OS firewall and/or 1&1 Hardware or Cloud firewall.
+
+Then, it is also recommended to create TXT SPF records for each domain that includes your server's IP address. This will let other mail servers know that your server is allowed to send mail for those domains.
 
 ## Plesk: How to Manually install a Plesk License key in your root server
 
@@ -522,6 +564,8 @@ https://support.plesk.com/hc/en-us/articles/213403429-How-to-upgrade-MySQL-Maria
 Here is an article for going from 5.5 to 5.6-5.7 on Plesk for Linux:
 
 https://support.plesk.com/hc/en-us/articles/213403429-How-to-upgrade-MySQL-5-5-to-5-6-5-7-on-Linux
+
+
 
 # WHM/CPANEL FAQ 
 
