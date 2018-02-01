@@ -1,5 +1,15 @@
 # 1&1 SERVER FAQ
 
+Linux Servers are administered using a Terminal program, making a secure shell connection to the server and typing commands into the prompt. You may have seen Command Prompt on Windows PCs and it is similar to that. 
+
+Here is a detailed explanation of SSH: 
+
+https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/explanation-of-ssh-secure-shell-access-a595889.html
+
+How to connect if you are on a Windows PC: https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/establish-an-ssh-connection-from-a-pc-a595890.html
+
+How to connect if you are on a Mac: https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/establish-an-ssh-connection-from-a-mac-a748749.html
+
 ## 1&1 Dedicated Root Servers: Troubleshooting Tools:
 
 Here are some recommended steps to follow to bring your server online. These are the tools that are provided by 1&1 to help you troubleshoot your customer-managed root servers:
@@ -483,7 +493,17 @@ https://docs.plesk.com/en-US/12.5/administrator-guide/plesk-administration/ports
 * TCP 8443: Plesk Interface
 * TCP 8447: Plesk Update/Upgrades
 
-## 1&1 Plesk / SSL: How to issue, download, and install a root SSL from 1&1 in Plesk:
+## Troubleshooting Plesk and Reading Log files
+
+To troubleshoot plesk issues, you would look at the logs for the service that has the problem. For example, if you have a problem with the mail server or sending mail, you would check the mail logs. There are ways to do this using Plesk's web UI as well as using the terminal. 
+
+Viewing Log files in Plesk: https://docs.plesk.com/en-US/onyx/customer-guide/customer-account-administration/viewing-statistics/log-files.65210/
+
+Location of Plesk services log files: https://support.plesk.com/hc/en-us/articles/213403509-Plesk-for-Linux-services-logs-and-configuration-files-
+
+Specifically for Plesk Mail servers, you would want to look at /var/log/maillog. You can use the 'less' command to view the text file, or other common methods. 
+
+## Plesk with 1&1 SSL: How to issue, download, and install a root SSL from 1&1 in Plesk:
 
 Step 1: Setup the SSL in 1&1 Manage SSL section.
 https://help.1and1.com/ssl-certificates-c85183/administration-c85185/ssl-certificate-managed-by-you-c85188/ssl-certificate-setup-process-using-activation-e-mail-a792728.html
