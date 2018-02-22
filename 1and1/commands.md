@@ -493,6 +493,15 @@ https://docs.plesk.com/en-US/12.5/administrator-guide/plesk-administration/ports
 * TCP 8443: Plesk Interface
 * TCP 8447: Plesk Update/Upgrades
 
+
+## Plesk Migration
+
+You can use Plesk Migration tools to move Plesk from one server to another including databases, configurations, mailboxes and webspaces.
+
+Plesk Migration Guide:
+
+https://support.plesk.com/hc/en-us/articles/213912645-Plesk-Migration-and-Transfer-Guide
+
 ## Troubleshooting Plesk and Reading Log files
 
 To troubleshoot plesk issues, you would look at the logs for the service that has the problem. For example, if you have a problem with the mail server or sending mail, you would check the mail logs. There are ways to do this using Plesk's web UI as well as using the terminal. 
