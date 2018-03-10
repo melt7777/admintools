@@ -757,6 +757,7 @@ mount -o bind /dev dev
 mount -t sysfs sys sys
 chroot /mnt /bin/bash
 update-grub
+## If using EFI: need to do this: mount /dev/sda1 /boot/efi
 /usr/sbin/grub-install --recheck --no-floppy /dev/sda
 sync & reboot
 ```
