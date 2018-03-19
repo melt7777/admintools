@@ -24,6 +24,41 @@ http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/rescue-and-
 http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/rescue-and-recovery-c76208/access-your-windows-server-via-the-serial-console-a627375.html
 http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/rescue-and-recovery-c76208/use-the-serial-console-with-a-windows-server-a627376.html
 
+
+How to disable the Windows Firewall from Serial Console on a Windows Dedicated Server:
+```
+SAC>cmd
+The Command Prompt session was successfully launched.
+SAC>
+EVENT:   A new channel has been created.  Use "ch -?" for channel help.
+Channel: Cmd0006
+SAC>ch -sn Cmd0006
+
+Name:                  Cmd0006
+Description:           Command
+Type:                  VT-UTF8
+Channel GUID:          2bc31f39-2705-11e8-9101-509a4c7c4926
+Application Type GUID: 63d02271-8aa4-11d5-bccf-00b0d014a2d0
+
+Press <esc><tab> for next channel.
+Press <esc><tab>0 to return to the SAC channel.
+Use any other key to view this channel.
+
+
+Please enter login credentials.
+Username: administrator
+Domain  :
+Password: ************
+
+
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>netsh advfirewall set allprofiles state off
+Ok.
+```
+
+
 4. You can also learn about the other recovery tools provided to our root-server customers found here: 
 http://help.1and1.com/servers-c37684/dedicated-server-linux-c37687/rescue-and-recovery-c37690
 
@@ -288,11 +323,35 @@ http://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/add-or-rem
 
 For more information how SPF records are built, see this 3rd party tool: http://spfwizard.net
 
+## Examples of CNAME, TXT, DKIM, and Subdomain using 1&1 DNS:
+
+https://help.1and1.com/domains-c36931/manage-domains-c79822/subdomains-c37588/create-a-subdomain-a594923.html
+
+https://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/authenticate-domain-with-mailchimp-create-dns-records-for-dkim-and-spf-a793151.html
+
+https://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/domain-and-e-mail-verification-with-google-apps-a792702.html
+https://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/change-your-domain-s-ip-address-a-record-a599296.html
+
+
 ## 1&1 Mail: How to migrate domains and emails from one contract to another:
 
-1. Move the domains from old package to new package (Mail will go down):
+In 1&1, there are 2 kinds of domains: Domains that you register through 1&1, and Domains registered externally (elsewhere, at another registrar.) 
+
+You can see domain registrar by using WHOIS. (Whois.com or who.is are examples of sites that look up WHOIS information.)
+
+For 1&1 Domains, you transfer the domain from package to package using the My Domains -> the domain -> click the Actions Gear for more options -> Renewal & Transfer -> Transfer domain to another package. For External Domains (not registered at 1&1) you have to delete the X-domain from the old Contract, wait for deletion,  and Create it in the new contract.
+
+1. For 1&1 Domains:
+
+Move the domains from old package to new package (Mail will go down):
 If you do not have as a target a hosting or server package, order a new contract / hosting package for email to go to.
 http://help.1and1.com/domains-c36931/transfer-domains-c79823/within-1and1-c38670/transfer-a-domain-between-1and1-packages-within-the-same-account-a792490.html
+
+1. For External Domains: 
+
+Remove the X-domain from the old contract (Mail will go down.) https://help.1and1.com/account-and-billing-c65577/cancellation-c85201/remove-an-external-domain-from-a-package-a763809.html
+
+Then Create the domain in the new contract. Select the contract you want at the top of the My Contracts Section to be sure. https://help.1and1.com/domains-c36931/transfer-domains-c79823/to-1and1-c37567/set-up-an-external-domain-with-1and1-a594802.html
 
 2. Create the email accounts again in the new package (they will be empty)
 http://help.1and1.com/e-mail-and-office-c37589/1and1-mail-basic-c37590/getting-started-c85087/create-an-e-mail-account-in-your-1and1-package-a616894.html
@@ -548,6 +607,19 @@ And you can provide them instructions for restoring the backups:
 
 https://docs.plesk.com/en-US/onyx/customer-guide/advanced-backing-up-and-recovering-websites/restoring-backups.65200/
 
+## Plesk: Configuring Plesk for FTP access: 
+
+Try changing the configuration according to these articles: 
+
+https://support.plesk.com/hc/en-us/articles/213936605-Cannot-connect-to-Plesk-FTP-storage-via-FileZilla-3-10-ETIMEDOUT-Connection-attempt-timed-out
+
+https://support.plesk.com/hc/en-us/articles/213391389-It-is-not-possible-to-establish-FTP-connection-using-FileZilla-ENETUNREACH-Network-unreachable
+
+https://support.plesk.com/hc/en-us/articles/115001903793-Cannot-connect-via-FTP-ETIMEDOUT-Connection-attempt-timed-out
+
+Please also double-check that ports for FTP and/or active and passive port ranges are available through your firewall.
+
+To test a port being open: `telnet example.myserver.com 21`
 
 ## Plesk: Configuring Plesk as a Mail Server:
 
@@ -564,6 +636,14 @@ You will also want to make sure your server has a Fully Qualified Domain Name (s
 You will also want to make sure you have the mail ports opened in your OS firewall and/or 1&1 Hardware or Cloud firewall.
 
 Then, it is also recommended to create TXT SPF records for each domain that includes your server's IP address. This will let other mail servers know that your server is allowed to send mail for those domains.
+
+## Troubleshooting Email sending issues:
+
+Here are some good lists of the SMTP Error codes that are returned from mail servers. You would see these errors either in a "Mail Undeliverable" bounceback email, or in the server's mail log (example: /var/log/maillog on many linux servers):
+
+http://support.mailhostbox.com/email-administrators-guide-error-codes/   
+http://www.iana.org/assignments/smtp-enhanced-status-codes/smtp-enhanced-status-codes.xhtml
+
 
 ## Plesk: How to Manually install a Plesk License key in your root server
 
@@ -802,3 +882,39 @@ e2fsck -f /dev/mapper/vg00-var
 tune2fs -O +has_journal /dev/mapper/vg00-var
 ```
 
+# 	 	Market Contact Information
+Note: In the US we support all US/CA/WW contracts
+
+United States
+Support Number: 1-866-991-2631
+Support Email: support@1and1.com
+
+Austria
+Support Number: 01 267 6037
+
+Germany
+Support Number: 0721/9600
+
+France
+Support Number: 0970 808 911
+Support Email: support@1and1.fr
+
+Canada
+Support Number: 1-844-296-2059
+Support Email: support@1and1.com
+
+United Kingdom
+Support Number: 0333 336 5691
+Support Email: support@1and1.co.uk
+
+Italy
+Support Number: 02-218 026 81
+Support Email: supporto@1and1.it
+
+Mexico
+Support Number: 01 800 123 8394
+Support Email: soporte@1and1.mx
+
+Spain
+Support Number: 91 136 0000
+Support Email: soporte@1and1.es
