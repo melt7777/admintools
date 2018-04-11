@@ -2,7 +2,7 @@
 
 Linux Servers are administered using a Terminal program, making a secure shell connection to the server and typing commands into the prompt. You may have seen Command Prompt on Windows PCs and it is similar to that. 
 
-Here is a detailed explanation of SSH: 
+## Here is a detailed explanation of SSH (Secure SHell): 
 
 https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/explanation-of-ssh-secure-shell-access-a595889.html
 
@@ -24,8 +24,10 @@ http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/rescue-and-
 http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/rescue-and-recovery-c76208/access-your-windows-server-via-the-serial-console-a627375.html
 http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/rescue-and-recovery-c76208/use-the-serial-console-with-a-windows-server-a627376.html
 
+Here is an example of how to disable the Windows Firewall from Serial Console on a Windows Dedicated Server:
 
-How to disable the Windows Firewall from Serial Console on a Windows Dedicated Server:
+(Once connected to the Serial Console):
+
 ```
 SAC>cmd
 The Command Prompt session was successfully launched.
@@ -68,13 +70,13 @@ Here are the backup options for your server along with brief explanation:
 
 FTP BACKUP: This is where we provide you with a FTP file storage in our datacenter (outside of your server itself) and you can program any FTP-compatible backup software to periodically sync files from the server to the FTP storage server.  Prices are monthly but billed in 3-month (quarterly) intervals by amount of storage:  
   
-  FTP 250GB	--	$19.99/mo  
-  FTP 500GB	--	$29.99/mo  
+  FTP 250GB	    --	$19.99/mo  
+  FTP 500GB	    --	$29.99/mo  
   FTP 1000GB	--	$39.99/mo  
   
 PROFESSIONAL BACKUP: Backup storage is provided similar to FTP but it's managed in the Control Panel and you install the Client software inside your server and it's handled by the software.  
   
-  Professional Backup L (10 GB)	--	$9.99/mo  
+  Professional Backup L (10 GB)	    --	$9.99/mo  
   Professional Backup XL (50 GB)	--	$29.99/mo  
   Professional Backup XXL (100 GB)	--	$49.00/mo  
   
@@ -674,7 +676,15 @@ Here is an article for going from 5.5 to 5.6-5.7 on Plesk for Linux:
 
 https://support.plesk.com/hc/en-us/articles/213403429-How-to-upgrade-MySQL-5-5-to-5-6-5-7-on-Linux
 
+## Plesk: Checking and repairing databases in Plesk:
 
+Check and repair and optimize your database tables.
+
+Using Plesk Web UI: https://docs.plesk.com/en-US/12.5/administrator-guide/website-management/website-databases/checking-and-repairing-databases.74498/
+
+Using the Plesk repair command: https://docs.plesk.com/en-US/12.5/administrator-guide/plesk-administration/plesk-repair-utility/plesk-repair-utility-mysql.74671/
+
+Using mysql command line: https://dev.mysql.com/doc/refman/5.7/en/rebuilding-tables.html
 
 # WHM/CPANEL FAQ 
 
@@ -919,3 +929,19 @@ Support Email: soporte@1and1.mx
 Spain
 Support Number: 91 136 0000
 Support Email: soporte@1and1.es
+
+# 1&1 Nameservers 
+
+Note: Order counts.
+
+US/WW:
+ns-us.1and1-dns.com
+ns-us.1and1-dns.us
+ns-us.1and1-dns.de
+ns-us.1and1-dns.org
+
+CA:
+NS1: ns-ca.1and1-dns.com
+NS2: ns-ca.1and1-dns.biz
+NS3: ns-ca.1and1-dns.ca
+NS4: ns-ca.1and1-dns.org

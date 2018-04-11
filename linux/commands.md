@@ -156,6 +156,40 @@ Ok, now we have unpacked the zip and/or rar files, but they are all unpacked dee
 find . -name '*.mkv' -exec mv {} . \;
 ```
 
+### Another unrar script: 
+
+```bash
+#!/bin/bash
+# unrarall
+# Usage: cd to parent-dir and invoke command
+function unrarall() {
+    local MYDIR=""
+    local MYFILE=""
+    local CWD=$(pwd)
+
+    find . -iname '*.rar' | while read FILE
+    do
+        MYDIR=$(dirname "$FILE")
+        MYFILE=$(basename "$FILE")
+
+        # Only unrar part01.rar or .rar
+        echo $MYFILE | grep -q 'part[0-9]*.rar$' 2>&1 > /dev/null
+        if [ "$?" == "0" ]; then
+                echo $MYFILE | grep -q 'part01.rar$' 2>&1 > /dev/null
+                if [ "$?" == "1" ]; then
+                        continue
+                fi
+        fi
+
+            cd "$MYDIR"
+            echo "Unrar $MYFILE"
+            unrar x -o+ "$MYFILE"
+            cd "$CWD"
+    done
+}
+```
+
+
 ## bash script to create playlist files in music subdirectories
 
 ```
@@ -238,3 +272,20 @@ Keep in mind that these are just a few pretty basic commands that would give you
 apt -y install pv
 pv -tpreb /dev/sda | dd of=/dev/sdb bs=4K conv=notrunc,noerror,sync
 ```
+### test openvpn server?
+
+`echo -e "\x38\x01\x00\x00\x00\x00\x00\x00\x00" | timeout 10 nc -u 192.168.1.4 19999 | cat -v`
+
+
+## backup/restore plex data in a freebsd jail 
+
+### backup-plex.sh
+
+```bash
+#!/bin/sh
+#takes a compressed backup of the plexdata directory via having tar run the dir
+tar -cvjf /mnt/volume/jails/backups/plexdataBKUP.tar.bz2 /mnt/clip/jails/plexmediaserver_2/usr/pbi/plexmediaserver-amd64
+
+### restore-plex.sh
+
+`tar -xjvf /mnt/clip/jails/backups/plexdataBKUP.tar.bz2 /mnt/clip/jails/plexmediaserver_2/usr/pbi/plexmediaserver-amd64/`
