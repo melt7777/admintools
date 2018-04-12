@@ -79,6 +79,14 @@ PROFESSIONAL BACKUP: Backup storage is provided similar to FTP but it's managed 
   Professional Backup L (10 GB)	    --	$9.99/mo  
   Professional Backup XL (50 GB)	--	$29.99/mo  
   Professional Backup XXL (100 GB)	--	$49.00/mo  
+
+## 1&1 Dedicated Root Servers: Adding Block Storage:
+
+Block Storage appears as a new additional hard disk in your OS.
+
+Cost: Comes out to about ~ 7.2c/GB/month for block storage in the Cloud.)
+
+Block Storage guide: https://whstatic.1and1.com/help/CloudServer/EN-US/index.html
   
 ## 1&1 Dedicated Root Servers: Adding IPv4 Addresses:
 
