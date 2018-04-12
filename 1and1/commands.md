@@ -728,6 +728,9 @@ This guide shows how to run your own DNS server within WHM.
 
 https://forums.cpanel.net/threads/tutorial-nameserver-configuration-on-cpanel-servers.404841/
 
+## How to install Wordpress on cPanel:
+
+https://documentation.cpanel.net/display/CKB/How+to+Install+WordPress+With+cPanel
 
 # Wordpress FAQ
 
