@@ -80,14 +80,6 @@ PROFESSIONAL BACKUP: Backup storage is provided similar to FTP but it's managed 
   Professional Backup XL (50 GB)	--	$29.99/mo  
   Professional Backup XXL (100 GB)	--	$49.00/mo  
 
-## 1&1 Dedicated Root Servers: Adding Block Storage:
-
-Block Storage appears as a new additional hard disk in your OS.
-
-Cost: Comes out to about ~ 7.2c/GB/month for block storage in the Cloud.)
-
-Block Storage guide: https://whstatic.1and1.com/help/CloudServer/EN-US/index.html
-  
 ## 1&1 Dedicated Root Servers: Adding IPv4 Addresses:
 
 An additional IPv4 will be $0.99/month billed quarterly. You can add up to 7 to your dedicated server for a total supported of 8 IPv4. Please reply with Phone PIN for verification and we will order 1 additional IPv4 for your server. It takes about 15 minutes for it to be ready to use. Don't forget to add it to your firewall.
@@ -123,6 +115,13 @@ http://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/change-you
 
 https://help.1and1.com/servers-c37684/1and1-cloud-server-c85165/troubleshooting-c85196/troubleshoot-ftp-issues-with-your-1and1-cloud-server-a792828.html
 
+## 1&1 Root Cloud Servers: Adding Block Storage:
+
+Block Storage appears as a new additional hard disk in your OS.
+
+Cost: Comes out to about ~ 7.2c/GB/month for block storage in the Cloud.)
+
+Block Storage guide: https://whstatic.1and1.com/help/CloudServer/EN-US/index.html
 
 ## 1&1 Root Cloud Servers: Backup Options:
 
@@ -429,6 +428,16 @@ copy and paste all of what appears in notepad into a reply to this email. Then w
 ## Windows Server: Turn Off Internet Explorer Enhanced Security Configuration
 
 http://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/administration-c40119/turn-off-internet-explorer-enhanced-security-configuration-a696299.html
+
+## Windows Server: RDP Connections:
+
+Windows Server license provided with 1&1 Servers allows up to two (2) concurrent users to be logged into RDP at the same time.
+
+If you need more than 2 concurrent RDP connections, you must purchase and install additional Client Access Licenses from Microsoft or a Microsoft reseller. We do not support any licenses not provided through 1&1. You would have to install and manage the licenses in your server using the support provided by the license vendor.
+
+An attempt to add connections without licensing may cause issues with connecting to RDP due to Microsoft licensing.  
+
+If you are having trouble getting in, you can temporarily override this by using mstsc /admin flag when running RDP client.
 
 ## Windows Server: How to mitigate SMBv1 Vulnerability in Windows Server 2003/2008 to help prevent WannaCry/malware infections:
 
