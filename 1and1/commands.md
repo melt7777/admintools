@@ -174,7 +174,10 @@ http://help.1and1.com/servers-c37684/virtual-private-server-c63343/virtuozzo-pow
 How to Log In to the Virtuozzo Power Panel:
 http://help.1and1.com/servers-c37684/virtual-private-server-c63343/virtuozzo-power-panel-c63354/log-in-to-the-virtuozzo-power-panel-a686142.html
 
-## VNC: For accessing rescue mode, we recommend UltraVNC Viewer Portable: 
+## VNC: For accessing rescue mode, we recommend VNC Viewer for Google Chrome or UltraVNC Viewer Portable:
+
+https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch
+
 http://www.uvnc.com/component/jdownloads/summary/5/97.html                                                                    
 
 ## Managed Cloud Servers: How to mitigate 504 errors on the Managed Cloud Servers:
