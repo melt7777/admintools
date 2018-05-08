@@ -724,7 +724,7 @@ Q: Can you put that on Virtual Server Cloud M plan?
 
 A: Yes, but a VPS M has only 1 GB of ram. WHM would use most of that overhead. Recommend a L or better if they want a panel like WHM or Plesk.
 
-## How to do the initial configuration for WHM/cPanel on 1&1 cloud Servers:
+## WHM: How to do the initial configuration for WHM/cPanel on 1&1 cloud Servers:
 
 Here are the official guides from cPanel:
 
@@ -742,13 +742,20 @@ If you want to use 1&1 Resolvers, these depend on your DHCP lease. To find out w
 
 The DNS Resolvers usually follow the format 10.255.255.x.
 
-## Tutorial: Nameserver configuration on cPanel servers:
+## WHM: Nameserver configuration on cPanel servers:
 
 This guide shows how to run your own DNS server within WHM.
 
 https://forums.cpanel.net/threads/tutorial-nameserver-configuration-on-cpanel-servers.404841/
 
-## How to install Wordpress on cPanel:
+## WHM: Manage your PHP versions and extensions using EasyApache:
+
+https://documentation.cpanel.net/display/68Docs/PHP+Extensions+and+Applications+Package
+https://documentation.cpanel.net/display/EA4/How+to+Locate+and+Install+a+PHP+Version+or+Extension
+
+https://www.youtube.com/watch?v=NDEHX9Q5UYI
+
+## WHM: How to install Wordpress on cPanel:
 
 https://documentation.cpanel.net/display/CKB/How+to+Install+WordPress+With+cPanel
 
