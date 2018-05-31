@@ -46,12 +46,10 @@ Press <esc><tab> for next channel.
 Press <esc><tab>0 to return to the SAC channel.
 Use any other key to view this channel.
 
-
 Please enter login credentials.
 Username: administrator
 Domain  :
 Password: ************
-
 
 Microsoft Windows [Version 10.0.14393]
 (c) 2016 Microsoft Corporation. All rights reserved.
@@ -59,8 +57,6 @@ Microsoft Windows [Version 10.0.14393]
 C:\Windows\system32>netsh advfirewall set allprofiles state off
 Ok.
 ```
-
-
 4. You can also learn about the other recovery tools provided to our root-server customers found here: 
 http://help.1and1.com/servers-c37684/dedicated-server-linux-c37687/rescue-and-recovery-c37690
 
@@ -83,6 +79,9 @@ PROFESSIONAL BACKUP: Backup storage is provided similar to FTP but it's managed 
 ## 1&1 Dedicated Root Servers: Adding IPv4 Addresses:
 
 An additional IPv4 will be $0.99/month billed quarterly. You can add up to 7 to your dedicated server for a total supported of 8 IPv4. Please reply with Phone PIN for verification and we will order 1 additional IPv4 for your server. It takes about 15 minutes for it to be ready to use. Don't forget to add it to your firewall.
+
+
+--------------
 
 ## 1&1 Root Cloud Servers: Getting Started:
 
@@ -145,6 +144,12 @@ Users Guide to Cloud Panel Usage Costs: please read: https://whstatic.1and1.com/
  
 SNAPSHOTS -> These are taken on the Servers -> click a server -> Actions -> Create Snapshot.  These are temporary images you can create just before doing a major change, update, or upgrade. If the action fails you can roll back to when it was working good. These do not cost, but they are only stored for a couple days and not automatic.  Also, they need to be deleted when re-imaging and when upgrading resources. You would create an Image instead if you are going to take these actions.
 
+## 1&1 Root Cloud Servers: Direct Cloudpanel login
+
+For this you have to have a Root Cloud Server (not VPS). You can create users in the Cloud Panel on the left side menu under Users. Then they can login using the direct URL: 
+
+https://cloudpanel.1and1.com/login
+
 ## 1&1 Root Cloud Servers and Cloud VPS: What's the difference between Cloud Server and Virtual Server Cloud?
 
 The Full (Root) Cloud Server packages ( Cloud Server M) and the Virtual Cloud Server ( Cloud M) mainly differ in your options through the cloud panel. Overall they are are the same server, however with the Full Cloud server package you have more features:
@@ -163,6 +168,8 @@ With the Cloud M/ Virtual cloud servers many of these additional features are no
 
 **Performance/resource-wise they are the same server.**
 
+-----
+
 
 ## 1&1 VPS: How to manage a 1&1 Virtuozzo/Parallels VPS using Parallels Power Panel:
 
@@ -178,7 +185,9 @@ http://help.1and1.com/servers-c37684/virtual-private-server-c63343/virtuozzo-pow
 
 https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch
 
-http://www.uvnc.com/component/jdownloads/summary/5/97.html                                                                    
+http://www.uvnc.com/component/jdownloads/summary/5/97.html
+
+Here is a video about it: https://www.youtube.com/watch?v=WY8if72eZHc                                                                    
 
 ## Managed Cloud Servers: How to mitigate 504 errors on the Managed Cloud Servers:
 
@@ -203,6 +212,7 @@ https://social.technet.microsoft.com/Forums/Lync/en-US/e22abc77-fb2a-49eb-bb30-e
 - As a result, The existing drive mirrors itself to the new drive and then you are in sync again.
 
 At this time we are on the first step. When you reply with the go-ahead and verification PIN, we will file the ticket to swap the bad disk out. 
+
 
 ## 1&1 Dedicated Root Server: 1&1 Professional Backup for Linux
 
@@ -390,6 +400,22 @@ http://help.1and1.com/search/click/controller/search/url/account-and-billing-c65
 ## Windows Server: How to access your server using RDP (Remote Desktop)
 
 https://help.1and1.com/servers-c37684/dedicated-server-windows-c39510/organization-via-control-panel-c39514/log-in-to-a-windows-server-via-remote-desktop-a749713.html
+
+## Windows Server: RDP CALs
+
+Our Windows Server license provides up to 2 concurrent RDP users at a time and unlimited web clients. 
+ 
+If you need more RDP users to be connected at the same time, you would need them to provide RDP CALs (Remote Desktop Client Access Licenses.)
+
+If you need more you must contact Microsoft, as we are not a license provider for those.
+
+## Windows Server: How to install SSL in IIS using a PFX file: 
+
+https://www.digicert.com/ssl-support/pfx-import-export-iis-7.htm
+
+## Windows Server: How to redirect HTTP to HTTPS:
+
+https://help.1and1.com/ssl-certificates-c85183/administration-c85185/ssl-certificate-managed-by-1and1-c85187/redirect-traffic-to-your-ssl-secured-site-a618201.html
 
 ## Windows Server: How to disable password expiration
 
@@ -923,6 +949,21 @@ e2fsck -f /dev/mapper/vg00-var
 tune2fs -O +has_journal /dev/mapper/vg00-var
 ```
 
+Software RAID on Linux: Command cheat sheet:
+
+```
+mdadm --detail
+mdadm --detail --scan --verbose > /etc/mdadm.conf 
+mdadm --fail
+mdadm --add /dev/md1 /dev/sda1 /dev/sdb1
+```
+
+
+Mount lvm inside Knoppix rescue on a centos cloud server:
+
+`vgchange -ay centos`
+
+
 # 	 	Market Contact Information
 Note: In the US we support all US/CA/WW contracts
 
@@ -965,13 +1006,13 @@ Support Email: soporte@1and1.es
 Note: Order counts.
 
 US/WW:
-ns-us.1and1-dns.com
-ns-us.1and1-dns.us
-ns-us.1and1-dns.de
-ns-us.1and1-dns.org
+- ns-us.1and1-dns.com
+- ns-us.1and1-dns.us
+- ns-us.1and1-dns.de
+- ns-us.1and1-dns.org
 
 CA:
-NS1: ns-ca.1and1-dns.com
-NS2: ns-ca.1and1-dns.biz
-NS3: ns-ca.1and1-dns.ca
-NS4: ns-ca.1and1-dns.org
+- NS1: ns-ca.1and1-dns.com
+- NS2: ns-ca.1and1-dns.biz
+- NS3: ns-ca.1and1-dns.ca
+- NS4: ns-ca.1and1-dns.org
