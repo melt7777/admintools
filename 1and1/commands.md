@@ -168,6 +168,72 @@ With the Cloud M/ Virtual cloud servers many of these additional features are no
 
 **Performance/resource-wise they are the same server.**
 
+
+## 1&1 Root Cloud Servers and Cloud VPS: How to Increase the LVM Partition following a Cloud server Resize.
+This is the process of increasing the LVM Partition to fill use up added disk space after a cloud server is reconfigured.
+
+Overview:
+Remove and Recreate physical LVM Partition(/dev/sda2)
+Extend LVM Physical Volume(pvresize)
+Extend LVM Logical Volume(lvresize)
+Extend Filesystem into remaining space(xfs_growfs//resize2fs)
+
+Centos 7:
+In this example a cloud server L with Centos 7 was upgraded to an XXL(80GB of disk was added)
+
+Step 0: Make a snapshot using the Cloud panel - ALWAYS. Click server -> Actions -> Create snapshot. 
+
+Step 1: Delete/Recreate the LVM partition using fdisk
+`~$ disk /dev/sda`
+type "p" to list current partitions
+
+Notice(and verify) that /dev/sda2 is your LVM partition and there`s no partitions behind it.
+
+We will now delete and recreate the physical partition, the command are as follows:
+
+Delete partition:
+```
+d
+2
+```
+Create partition:
+```
+n
+p
+2
+>enter
+>enter
+```
+
+Change partition type to LVM:
+```
+t
+2
+8e
+```
+
+Save and quit: `*w`
+
+The server can now be rebooted(or you can run `partprobe /dev/sda`) so that the new partition structure is used by the kernel.
+
+Step 2: Resize LVM physical volume
+Resize this with `pvresize /dev/sda2`
+
+Verify it worked with `pvs`
+
+Step 3: Resize LVM Logical volume
+Because this is a single LVM volume for the entire filesystem you can safely allocate out all the space to it, not this VG changes based on OS:
+
+`lvresize -l +100%FREE /dev/mapper/centos-root`
+
+Step 4: Grow filesystem into remaining space
+Check filesystem type with `mount`
+
+Grow the filesystem using the appropriate command
+`xfs_growfs /dev/mapper/centos-root`
+or `resize2fs /dev/mapper/centos-root` if it`s ext file system.
+
+
 -----
 
 
