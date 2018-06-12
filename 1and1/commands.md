@@ -644,6 +644,8 @@ https://help.1and1.com/hosting-c37630/webspace-and-access-c85098/ssh-c37775/esta
 
 Plesk is a Web Server Management Panel system that allows an administrator a web-based GUI to manage their server. This product is made by Plesk.com, a 1&1 software partner. 
 
+Documentation and Help Portal for Plesk Onyx: https://docs.plesk.com/en-US/onyx/
+
 ## Scope of support
 
 The administration and management of a root server is the responsibility of the customer. If the server is accessible via SSH and/or RDP, then hosting is being provided. We do know how to troubleshoot basic Plesk issues and are happy to take a quick look or provide guidance and documentation to help you.  However, admin work is not done by 1&1 or by Plesk. If there is a problem with Plesk, or an issue that cannot be resolved using standard techniques, a 1&1 agent may opt to create a ticket to Plesk to get their assistance for you. This does take time to complete. 
