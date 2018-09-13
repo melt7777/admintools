@@ -1,3 +1,8 @@
+    ### How to install Sickrage the fastest and easiest way
+    ### Starting with a fresh jail on freenas 11.1-U2
+    
+    Notes: Using FreeNAS GUI Plugin installs results in broken, non-updateable jails. Always build from source where possible, it will save you heartache in the long run. 
+    
     # Update system
     pkg lock sqlite3
     pkg upgrade
@@ -24,4 +29,3 @@
     
     # Start it
     service sickrage start
-    
