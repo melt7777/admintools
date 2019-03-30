@@ -1,0 +1,18 @@
+[Unit]
+Description=Jackett Daemon
+After=network.target
+
+[Service]
+SyslogIdentifier=jackett
+Restart=always
+RestartSec=5
+Type=simple
+User=sonarr
+Group=sonarr
+WorkingDirectory=/opt/Jackett
+ExecStart=/opt/Jackett/jackett --NoRestart
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target
+
