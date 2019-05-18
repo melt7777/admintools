@@ -16,6 +16,7 @@
 - also load balancers and other connections
 - minikube - small kubernetes env
 - kubectl - cli tool
+- output from kubectl is in BSON, not JSON - careful!
 
 ### Helm
 - this is like ansible for kubernetes
