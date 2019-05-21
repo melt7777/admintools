@@ -1,5 +1,10 @@
 # Github FAQ
 
+Set up git user:
+`git config user.name "cooluser"`
+`git config user.email "my@mail.com"`
+
+
 Git Password Cache:
 
 `git config --global credential.helper cache`
@@ -140,53 +145,16 @@ Have you ever had zip or rar files buried deep into a directory structure that y
 
 ### Using Linux:
 
-to unrar all .rar in current linux directory:
+to unrar all .rar in subdirs of current linux directory:
 
-One or both of these should work:
 ```
-find . -name "*.rar" -exec unrar x -o+ {} \;
+for d in ./*/ ; do (cd "$d" && unrar x -o- *.rar); done
 ```
-OR 
-```
-find . -type d -exec sh -c '(cd {} && unrar e -r -o- *.rar)' ';'
-```
+
 Ok, now we have unpacked the zip and/or rar files, but they are all unpacked deep into the directory structure. How to gather, for example, all the mkv video files all into the current directory? 
 
 ```
 find . -name '*.mkv' -exec mv {} . \;
-```
-
-### Another unrar script: 
-
-```bash
-#!/bin/bash
-# unrarall
-# Usage: cd to parent-dir and invoke command
-function unrarall() {
-    local MYDIR=""
-    local MYFILE=""
-    local CWD=$(pwd)
-
-    find . -iname '*.rar' | while read FILE
-    do
-        MYDIR=$(dirname "$FILE")
-        MYFILE=$(basename "$FILE")
-
-        # Only unrar part01.rar or .rar
-        echo $MYFILE | grep -q 'part[0-9]*.rar$' 2>&1 > /dev/null
-        if [ "$?" == "0" ]; then
-                echo $MYFILE | grep -q 'part01.rar$' 2>&1 > /dev/null
-                if [ "$?" == "1" ]; then
-                        continue
-                fi
-        fi
-
-            cd "$MYDIR"
-            echo "Unrar $MYFILE"
-            unrar x -o+ "$MYFILE"
-            cd "$CWD"
-    done
-}
 ```
 
 
