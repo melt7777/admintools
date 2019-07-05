@@ -14,18 +14,30 @@ reboot
 sudo apt install deluged deluge-console deluge-webui
 sudo su -
 nano 
-sudo nano /etc/passwd
+sudo nano /etc/passwd # change debian-deluged's shell to /bin/bash
 sudo su debian-deluged -
 
 # run as debian-deluged:
 deluged
 deluge-console
-# settings -s AllowRemote true or something like that.
+# in the console, it's like an irc client. enter this command: 
+
+config -s allow_remote true
+
+# we will configure the rest later. enter this command:
+
+quit
 
 sudo nano /var/lib/deluged/.config/deluge/auth
 # add username:password:10
 
+# go back to root/sudoer user
+exit
+
 # (copy in the service files for deluged and sonarr - from this repo) 
+git clone https://github.com/melt7777/admintools
+cp admintools/linux/mediaserver/*.service /etc/systemd/system
+systemctl daemon-reload
 
 sudo systemctl start deluged
 sudo su debian-deluged deluged
@@ -58,12 +70,16 @@ sudo git clone https://github.com/Tautulli/Tautulli.git
 sudo mkdir /opt/Tautulli/mydata
 sudo chown tautulli:tautulli -R /opt/Tautulli
 cd Tautulli
+# nano /etc/passwd and change tautulli's shell to /bin/bash
 sudo su tautulli python Tautulli.py
-cd /etc/systemd/system
-sudo nano tautulli.service
-update-rc.d tautulli defaults     
-service tautulli start
+# copy in the /etc/systemd/system/tautulli.service file
+systemctl enable tautulli
+systemctl start tautulli
 ```
+
+### Pi-hole
+
+`curl -sSL https://install.pi-hole.net | bash`
 
 ### Jackett
 
