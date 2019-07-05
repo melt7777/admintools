@@ -5,10 +5,10 @@ DIR="/opt/awsdns"
 cd ${DIR}
 
 # Hosted Zone ID or the Domain to manage in AWS
-ZONEID="ZCJCUP3N0VDYG"
+ZONEID="zoneIDBLABLA"
 
 # The CNAME you want to update e.g. hello.example.com
-RECORDSET="edmonds.skyhighatry.com."
+RECORDSET="your.domain.com."
 TTL=300
 COMMENT="Auto updating @ `date`"
 # Change to AAAA if using an IPv6 address
@@ -48,7 +48,7 @@ else
             ],
             "Name":"$RECORDSET",
             "Type":"$TYPE",
-            "TTL":60
+            "TTL":300
           }
         }
       ]
