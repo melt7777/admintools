@@ -100,6 +100,7 @@ cd Jackett
 sudo ./install_service_systemd.sh
 
 You need root permissions to install the service. The service will start on each logon. You can always stop it by running `systemctl stop jackett.service` from Terminal. You can start it again it using `systemctl start jackett.service`. Logs are stored as usual under ~/.config/Jackett/log.txt and also in `journalctl -u jackett.service`.
+```
 
 #### Adding a Jackett indexer in Sonarr or Radarr
 
@@ -138,11 +139,13 @@ nano /etc/default/couchpotato
 
 update-rc.d couchpotato defaults
 service couchpotato start
+```
 
+#### Accessing these apps
 
-#### Example of commonly used ports
+the above installation using default ports would result in the following. 
 
-In the example, the host is 10.0.0.8. Yours will be different. 
+In the example, the host is 10.0.0.108. Yours will be different. 
 
 - deluged on 58846
 - jackett http://10.0.0.108:9117/UI/Dashboard 
