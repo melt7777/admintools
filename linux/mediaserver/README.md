@@ -83,14 +83,23 @@ systemctl start tautulli
 
 ### Jackett
 
-Download and extract the latest Jackett.Binaries.LinuxAMDx64.tar.gz release from the releases page and run Jackett with the command `./jackett`
-
 #### To install Jackett as a service
 
-open the Terminal and run `sudo ./install_service_systemd.sh` 
+From instructions: https://github.com/Jackett/Jackett
+
+```
+# become root.
+
+cd /opt
+
+# Download and extract the latest Jackett.Binaries.LinuxAMDx64.tar.gz release from the releases page and run Jackett with the command `./jackett`
+
+wget https://github.com/Jackett/Jackett/releases/download/v0.11.473/Jackett.Binaries.LinuxAMDx64.tar.gz
+tar xvf Jackett.Binaries.LinuxAMDx64.tar.gz
+cd Jackett
+sudo ./install_service_systemd.sh
 
 You need root permissions to install the service. The service will start on each logon. You can always stop it by running `systemctl stop jackett.service` from Terminal. You can start it again it using `systemctl start jackett.service`. Logs are stored as usual under ~/.config/Jackett/log.txt and also in `journalctl -u jackett.service`.
-
 
 #### Adding a Jackett indexer in Sonarr or Radarr
 
@@ -104,13 +113,40 @@ You need root permissions to install the service. The service will start on each
 - Click on the indexers corresponding  button and paste it into the CouchPotato host field.
 - For the Passkey use (redacted). Leave the username field blank.
 
+#### Couch Potato
+
+installation guide: https://vitux.com/how-to-install-couchpotato-on-ubuntu/
+
+```
+# become root 
+cd /opt
+mkdir couchpotato
+cd couchpotato/
+git clone https://github.com/RuudBurger/CouchPotatoServer.git
+cd CouchPotatoServer/
+mv * ..
+cd ..
+rm -r CouchPotatoServer/
+cp init/ubuntu /etc/init.d/couchpotato
+chmod +x /etc/init.d/couchpotato
+nano /etc/default/couchpotato
+
+# paste in: 
+ CP_USER=sonarr
+ CP_HOME=/opt/couchpotato
+ CP_DATA=/home/sonarr/couchpotato
+
+update-rc.d couchpotato defaults
+service couchpotato start
+
+
 #### Example of commonly used ports
 
 In the example, the host is 10.0.0.8. Yours will be different. 
 
 - deluged on 58846
-- jackett http://10.0.0.8:9117/UI/Dashboard 
-- tautulli http://10.0.0.8:8181/home#
-- cpotato http://10.0.0.8:5050/
-- sonarr http://10.0.0.8:8989
+- jackett http://10.0.0.108:9117/UI/Dashboard 
+- tautulli http://10.0.0.108:8181/home#
+- cpotato http://10.0.0.108:5050/
+- sonarr http://10.0.0.108:8989
 
