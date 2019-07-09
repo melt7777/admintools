@@ -141,6 +141,57 @@ update-rc.d couchpotato defaults
 service couchpotato start
 ```
 
+#### Lidarr
+
+install mono by guide https://www.mono-project.com/download/stable/#download-lin
+
+```
+sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update
+sudo apt install mono-devel
+```
+
+install lidarr by guide https://github.com/lidarr/Lidarr/wiki/Installation
+
+```
+cd /opt
+wget https://github.com/lidarr/Lidarr/releases/download/v0.6.2.883/Lidarr.develop.0.6.2.883.linux.tar.gz
+sudo tar -xzvf Lidarr.develop.0.6.2.883.linux.tar.gz
+useradd -s /bin/false -d /var/lib/lidarr/ -r -m -U lidarr
+chown -R lidarr:lidarr   /opt/Lidarr
+chmod -R a=,a+X,u+rw,g+r /opt/Lidarr
+```
+
+Create the file /etc/systemd/system/lidarr.service with the content:
+
+```
+[Unit]
+Description=Lidarr Daemon
+After=network.target
+
+[Service]
+User=lidarr
+Group=lidarr
+Type=simple
+ExecStart=/usr/bin/mono /opt/Lidarr/Lidarr.exe -nobrowser
+TimeoutStopSec=20
+KillMode=process
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+```
+
+enable the service and start. 
+```
+systemctl enable lidarr.service
+systemctl start lidarr.service
+systemctl status lidarr.service
+```
+
+Lidarr should be available on port 8686
+
 #### Accessing these apps
 
 the above installation using default ports would result in the following. 
