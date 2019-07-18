@@ -459,3 +459,18 @@ So what this means, is that every Module maintainer in the Go ecosystem now need
 In other languages you rely on the SemVer supported range to largely keep you fresh, where you only need to watch out for major version bumps.
 With Modules you’ll need to keep tabs on Majors, Minors, and Patches. requiring manual interaction from users is the path to systemic failure. How many adopters of modules are being this religious today?
 
+### Error Handling
+
+- An error in Go is any type implementing the error interface with an Error() string method.
+
+- Functions return errors just like any other value. Multiple return values distinguish errors from normal return values.
+
+- Errors are handled by checking the value(s) returned from a function and propagated to higher layers of abstraction through simple returns (perhaps adding details to the error message).
+
+Error handling related articles: 
+https://medium.com/@hussachai/error-handling-in-go-a-quick-opinionated-guide-9199dd7c7f76
+https://blog.golang.org/error-handling-and-go
+https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html
+https://medium.com/@sebdah/go-best-practices-error-handling-2d15e1f0c5ee
+https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully
+
