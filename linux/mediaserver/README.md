@@ -40,10 +40,18 @@ cp admintools/linux/mediaserver/*.service /etc/systemd/system
 systemctl daemon-reload
 
 sudo systemctl start deluged
-sudo su debian-deluged deluged
 
-sudo su debian-deluged deluge-web --fork
-# login webui ip:8112 and change the webui password, and then connect it to your deluged server using deluged username:password and the deluged ip:58846
+sudo su debian-deluged -
+# as debian-deluged user:
+
+# load webui on 8112 to configure the server with (to turn on 58846)
+deluge-web --fork  
+
+# point a brower at this box's ip:8112
+# default pass is **deluge** , change it when it prompts you to
+# connect it to your deluged server using connect button
+# in preferences, click Daemon tab, click Allow Remote connections
+
 ```
 
 ### Sonarr 
