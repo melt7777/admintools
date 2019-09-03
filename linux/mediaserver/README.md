@@ -122,6 +122,39 @@ You need root permissions to install the service. The service will start on each
 - Click on the indexers corresponding  button and paste it into the CouchPotato host field.
 - For the Passkey use (redacted). Leave the username field blank.
 
+#### Jackett auto-update 
+
+otherwise it just dies every few days.
+
+Add to crontab:
+
+```
+0 1 * * * root /root/upjackett.sh
+```
+
+/root/upjackett.sh:
+
+```bash
+#!/bin/bash
+# update Jackett.
+
+
+cd /opt
+rm -rf Jackett.old
+mv Jackett Jackett.old
+curl -s https://api.github.com/repos/Jackett/Jackett/releases/latest \
+| grep "Jackett.Binaries.LinuxAMDx64.tar.gz" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi -
+tar xvf Jackett.Binaries.LinuxAMDx64.tar.gz
+chown -R sonarr:sonarr Jackett
+systemctl start jackett
+systemctl restart sonarr
+```
+
+
+
 #### Couch Potato
 
 installation guide: https://vitux.com/how-to-install-couchpotato-on-ubuntu/
