@@ -26,3 +26,8 @@ services:
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 10m30s
+      timeout: 10s
+      retries: 3
