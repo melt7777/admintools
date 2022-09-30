@@ -1,0 +1,11 @@
+winget uninstall Microsoft.XboxApp_8wekyb3d8bbwe
+winget uninstall Microsoft.XboxGameOverlay_8wekyb3d8bbwe
+winget uninstall Microsoft.XboxGamingOverlay_8wekyb3d8bbwe
+winget uninstall Microsoft.XboxSpeechToTextOverlay_8wekyb3d8bbwe
+winget uninstall Microsoft.XboxIdentityProvider_8wekyb3d8bbwe
+winget uninstall Microsoft.YourPhone_8wekyb3d8bbwe
+winget uninstall SpotifyAB.SpotifyMusic_zpdnekdrzrea0
+winget uninstall Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe
+winget uninstall Microsoft.Wallet_8wekyb3d8bbwe
+winget uninstall Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe
+winget uninstall Onedrive 
