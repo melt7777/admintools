@@ -12,6 +12,8 @@ When code-server starts up, it creates a default config file,
 
 ~/.config/code-server/config.yaml
 
+Change the port/password/options as you see fit, according to code-server documentation. Example with hashed password and port 8888:
+
 ```yaml
 bind-addr: 0.0.0.0:8888
 auth: password
