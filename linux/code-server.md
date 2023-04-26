@@ -27,6 +27,10 @@ Install extension:
 
 `code-server --install-extension ms-python.python`
 
+Start on every boot:
+
+`sudo systemctl enable --now code-server@$USER`
+
 Restart code-server:
 
 `sudo systemctl restart code-server@$USER`
